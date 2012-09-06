@@ -35,7 +35,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin</artifactId>
+			<artifactId>vaadin-server</artifactId>
 			<version>${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<dependency>
