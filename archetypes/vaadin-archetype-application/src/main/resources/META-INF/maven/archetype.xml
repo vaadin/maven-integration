@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype>
+    <id>vaadin-archetype-application</id>
+    <sources>
+        <source>src/main/java/**/MyVaadinUI.java</source>
+    </sources>
+    <resources>
+        <resource>src/main/webapp/META-INF/context.xml</resource>
+        <resource>src/main/webapp/META-INF/MANIFEST.MF</resource>
+        <resource>src/main/webapp/WEB-INF/web.xml</resource>
+    </resources>
+</archetype>
