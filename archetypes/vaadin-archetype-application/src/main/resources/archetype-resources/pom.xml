@@ -57,6 +57,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-client</artifactId>
+			<version>${symbol_dollar}{vaadin.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes-compiled</artifactId>
 			<version>${symbol_dollar}{vaadin.version}</version>
 		</dependency>
@@ -109,6 +115,7 @@
 					<draftCompile>false</draftCompile>
 					<compileReport>true</compileReport>
 					<style>OBF</style>
+					<strict>true</strict>
 					<runTarget>http://localhost:8080/</runTarget>
 				</configuration>
 				<executions>
