@@ -19,7 +19,7 @@ public class MyVaadinUI extends UI
     @Override
     protected void init(WrappedRequest request) {
         Button button = new Button("Click Me");
-        button.addListener(new Button.ClickListener() {
+        button.addClickListener(new Button.ClickListener() {
             public void buttonClick(ClickEvent event) {
                 event.getButton().getUI().addComponent(new Label("Thank you for clicking"));
             }
