@@ -63,7 +63,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-themes-compiled</artifactId>
+			<artifactId>vaadin-themes</artifactId>
 			<version>${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<dependency>
