@@ -13,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.0.0.beta10</vaadin.version>
+		<vaadin.version>7.0.0.rc1</vaadin.version>
 		<vaadin.plugin.version>${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
 	</properties>
 	<repositories>
@@ -155,7 +155,7 @@
 											vaadin-maven-plugin
 										</artifactId>
 										<versionRange>
-											[7.0.0.beta10,)
+											[7.0.0.rc1,)
 										</versionRange>
 										<goals>
 											<goal>resources</goal>
