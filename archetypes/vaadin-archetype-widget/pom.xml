@@ -7,11 +7,11 @@
   <artifactId>vaadin-archetype-widget</artifactId>
   <packaging>maven-archetype</packaging>
   <name>Vaadin Widget Project Archetype</name>
-  <version>1.7.2</version>
+  <version>7.0.1</version>
   <url>http://vaadin.com</url>
   <inceptionYear>2009</inceptionYear>
   <description>
-      This archetype generates a Vaadin widget project for Vaadin 6.2+ and a test application.
+      This archetype generates a Vaadin widget project for Vaadin 7.0 and a test application.
   </description>
   <developers>
     <developer>
@@ -26,7 +26,15 @@
       <id>hesara</id>
       <name>Henri Sara</name>
       <email>hesara@vaadin.com</email>
-      <organization>IT Mill</organization>
+      <organization>Vaadin</organization>
+      <organizationUrl>http://vaadin.com</organizationUrl>
+      <timezone>+2</timezone>
+    </developer>
+    <developer>
+      <id>joonas</id>
+      <name>Joonas Lehtinen</name>
+      <email>joonas@vaadin.com</email>
+      <organization>Vaadin</organization>
       <organizationUrl>http://vaadin.com</organizationUrl>
       <timezone>+2</timezone>
     </developer>

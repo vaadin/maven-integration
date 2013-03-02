@@ -3,28 +3,28 @@
 #set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-    <display-name>Vaadin Widget Test Application</display-name>
+    <display-name>${ComponentClassName} Demo Application</display-name>
     <context-param>
         <description>Vaadin production mode</description>
         <param-name>productionMode</param-name>
         <param-value>false</param-value>
     </context-param>
     <servlet>
-        <servlet-name>Vaadin Application Servlet</servlet-name>
-        <servlet-class>com.vaadin.terminal.gwt.server.ApplicationServlet</servlet-class>
+        <servlet-name>VaadinServlet</servlet-name>
+        <servlet-class>com.vaadin.server.VaadinServlet</servlet-class>
         <init-param>
-            <description>Vaadin application class to start</description>
-            <param-name>application</param-name>
-            <param-value>${package}.WidgetTestApplication</param-value>
+            <description>UI to display for the add-on component demo</description>
+            <param-name>UI</param-name>
+            <param-value>${package}.demo.DemoUI</param-value>
         </init-param>
         <init-param>
-            <description>Application widgetset</description>
+            <description>Widgetset for the add-on component demo</description>
             <param-name>widgetset</param-name>
-            <param-value>${package}.gwt.MyWidgetSet</param-value>
+            <param-value>${package}.WidgetSet</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Vaadin Application Servlet</servlet-name>
+        <servlet-name>VaadinServlet</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
