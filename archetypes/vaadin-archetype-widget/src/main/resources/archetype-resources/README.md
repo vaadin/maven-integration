@@ -42,7 +42,7 @@ If you have a JRebel license, it makes on the fly code changes faster. Just add 
 
 To debug project and make code modifications on the fly in the server-side:
 - Start the project with Run > Debug configurations... 
-- Create a new Maven Build configuration for "vaadin:compile jetty:run"
+- Create a new Maven Build configuration for "package jetty:run"
 - If you have JRebel, also enable that from the JRebel tab
 - After you run it, you can access the demo application at http://localhost:8080/ and make code modifications on the server-side classes and SCSS files on the fly.
 
