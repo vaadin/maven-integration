@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype>
+    <id>vaadin-archetype-widget</id>
+    <sources>
+        <source>src\main\java\**\*.java</source>
+    </sources>
+    <resources>
+        <resource>src\main\java\**\*.gwt.xml</resource>
+        <resource>src\main\java\**\*.css</resource>
+        <resource>src\main\webapp\META-INF\context.xml</resource>
+        <resource>src\main\webapp\META-INF\MANIFEST.MF</resource>
+        <resource>src\main\webapp\WEB-INF\web.xml</resource>
+    </resources>
+</archetype>
