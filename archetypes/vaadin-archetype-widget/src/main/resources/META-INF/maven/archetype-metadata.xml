@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archetype-descriptor name="simple">
   <requiredProperties>
-    <requiredProperty key="ComponentClassName" >
-    </requiredProperty>
+    <requiredProperty key="ComponentClassName" />
   </requiredProperties>
   <fileSets>
-    <fileSet filtered="true" packaged="true" encoding="UTF-8">
-      <directory>/</directory>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
       <includes>
-        <include>**/*.txt</include>
-        <include>**/*.md</include>
+        <include>LICENSE.txt</include>
+        <include>README.md</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -42,6 +41,7 @@
       <directory>src/main/webapp/VAADIN/themes</directory>
       <includes>
         <include>**/*.png</include>
+        <include>**/*.ico</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">

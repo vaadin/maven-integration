@@ -11,7 +11,7 @@ Try the add-on demo at <url of the online demo>
 
 ${symbol_pound}${symbol_pound} Download release
 
-Official releases of this add-on are available at Vaadin Directory. For Maven instructions, download and reviews, go to http://vaadin.com/addon/${aryifactId}
+Official releases of this add-on are available at Vaadin Directory. For Maven instructions, download and reviews, go to http://vaadin.com/addon/${artifactId}
 
 ${symbol_pound}${symbol_pound} Building and running demo
 
@@ -34,14 +34,17 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Importing project
 
 Choose File > Import... > Existing Maven Projects from SCM
 
-Note that Eclipse may give errors on pom.xml. This is due to Eclipse m2e wtp not fully supporting all used Maven plugins used. Do not worry, the project still works fine. 
+Note that Eclipse may give errors on pom.xml execution targets, because Eclipse m2e wtp not fully supporting all used Maven plugins used. Use quick-fix to mark these errors as permanently ignored. Do not worry, the project still works fine. 
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Debugging server-side
 
-If you have a JRebel license, it makes on the fly code changes more reliable. Just add JRebel nature to your project by clicking project with right mouse button and choosing JRebel > Add JRebel Nature
+If you have a JRebel license, it makes on the fly code changes faster. Just add JRebel nature to your project by clicking project with right mouse button and choosing JRebel > Add JRebel Nature
 
-To debug project and make code modifications on the fly in the server-side, start the project with Run > Debug configurations... 
-Create a new Maven Build configuration for "package jetty:run". If you have JRebel, also enable that from the JRebel tab. After you run it, you can access the demo application at http://localhost:8080/ and make code modifications on the server-side classes and SCSS files on the fly.
+To debug project and make code modifications on the fly in the server-side:
+- Start the project with Run > Debug configurations... 
+- Create a new Maven Build configuration for "vaadin:compile jetty:run"
+- If you have JRebel, also enable that from the JRebel tab
+- After you run it, you can access the demo application at http://localhost:8080/ and make code modifications on the server-side classes and SCSS files on the fly.
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Debugging client-side
 
@@ -88,7 +91,7 @@ ${symbol_pound}${symbol_pound} Getting started
 
 Here is a simple example on how to try out the add-on component:
 
-<add code example here>
+<...>
 
 For a more comprehensive example, see src/test/java/org/vaadin/template/demo/DemoUI.java
 
@@ -108,4 +111,4 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Feature C
 
 ${symbol_pound}${symbol_pound} API
 
-JavaDoc is available online at <...>
+${ComponentClassName} JavaDoc is available online at <...>

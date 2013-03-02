@@ -8,7 +8,7 @@
 	<inherits name="com.vaadin.DefaultWidgetSet" /> 
 
 	<!-- Widget styles in public -directory -->
-	<stylesheet src="todolist/styles.css"/>
+	<stylesheet src="${artifactId}/styles.css"/>
     
     <!--
      Uncomment the following to compile the widgetset for one browser only.
@@ -38,6 +38,6 @@
      mvn jetty:run for the server-side. Then run mvn vaadin:run-codeserver and 
      add ?superdevmode to your application URL to activate SuperDevMode.
      -->
-    <!--   --><set-configuration-property name="devModeRedirectEnabled" value="true" /> -->
+    <!-- <set-configuration-property name="devModeRedirectEnabled" value="true" /> -->
 
 </module>
