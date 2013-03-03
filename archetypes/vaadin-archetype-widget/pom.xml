@@ -93,7 +93,7 @@
         <version>2.0-alpha-5</version>
         <extensions>true</extensions>
       </plugin>
-<!-- 
+<!-- Enable these to sign plugin for distribution
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>properties-maven-plugin</artifactId>

@@ -3,17 +3,18 @@
     <id>vaadin-archetype-widget</id>
     <sources>
         <source>src\main\java\**\*.java</source>
+        <source>src\test\java\**\*.java</source>
     </sources>
     <resources>
         <resource>README.md</resource>
         <resource>LICENSE.txt</resource>
         <resource>src\main\java\**\*.gwt.xml</resource>
         <resource>src\main\java\**\*.css</resource>
-        <resource>src\main\webapp\vaadin\themes\**\*.scss</resource>
-        <resource>src\main\webapp\vaadin\themes\**\*.png</resource>
-        <resource>src\main\webapp\vaadin\themes\**\*.ico</resource>
-        <resource>src\main\webapp\META-INF\context.xml</resource>
-        <resource>src\main\webapp\META-INF\MANIFEST.MF</resource>
-        <resource>src\main\webapp\WEB-INF\web.xml</resource>
+        <resource>src\test\webapp\vaadin\themes\**\*.scss</resource>
+        <resource>src\test\webapp\vaadin\themes\**\*.png</resource>
+        <resource>src\test\webapp\vaadin\themes\**\*.ico</resource>
+        <resource>src\test\webapp\META-INF\context.xml</resource>
+        <resource>src\test\webapp\META-INF\MANIFEST.MF</resource>
+        <resource>src\test\webapp\WEB-INF\web.xml</resource>
     </resources>
 </archetype>
