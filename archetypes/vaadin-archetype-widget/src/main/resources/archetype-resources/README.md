@@ -34,7 +34,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Importing project
 
 Choose File > Import... > Existing Maven Projects from SCM
 
-Note that Eclipse may give errors on pom.xml execution targets, because Eclipse m2e wtp not fully supporting all used Maven plugins used. Use quick-fix to mark these errors as permanently ignored. Do not worry, the project still works fine. 
+Note that Eclipse may give "Plugin execution not covered by lifecycle configuration" errors for pom.xml. Use "Permanently mark goal resources in pom.xml as ignored in Eclipse build" quick-fix to mark these errors as permanently ignored in your project. Do not worry, the project still works fine. 
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Debugging server-side
 
