@@ -5,16 +5,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>${groupId}</groupId>
-	<artifactId>${artifactId}</artifactId>
+	<groupId>\${groupId}</groupId>
+	<artifactId>\${artifactId}</artifactId>
 	<packaging>war</packaging>
-	<version>${version}</version>
+	<version>\${version}</version>
 	<name>Vaadin Web Application</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>7.0.2</vaadin.version>
-		<vaadin.plugin.version>${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
+		<vaadin.version>${project.version}</vaadin.version>
+		<vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -48,23 +48,23 @@
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-server</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version>
+			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client-compiled</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version>
+			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version>
+			<version>\${symbol_dollar}{vaadin.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version>
+			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -100,15 +100,15 @@
 			<plugin>
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
-				<version>${symbol_dollar}{vaadin.plugin.version}</version>
+				<version>\${symbol_dollar}{vaadin.plugin.version}</version>
 				<configuration>
 					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
 					<!-- <runTarget>mobilemail</runTarget> -->
 					<!-- We are doing "inplace" but into subdir VAADIN/widgetsets. This 
 						way compatible with Vaadin eclipse plugin. -->
-					<webappDirectory>${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets
+					<webappDirectory>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets
 					</webappDirectory>
-					<hostedWebapp>${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets
+					<hostedWebapp>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets
 					</hostedWebapp>
 					<noServer>true</noServer>
 					<!-- Remove draftCompile when project is ready -->
