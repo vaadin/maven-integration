@@ -93,6 +93,15 @@
         <version>2.0-alpha-5</version>
         <extensions>true</extensions>
       </plugin>
+      <!-- Replace Vaadin version in generated project with archetype version -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <escapeString>\</escapeString>
+        </configuration>
+      </plugin>
 <!-- Enable these to sign plugin for distribution
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -127,5 +136,21 @@
       </plugin>
  -->
     </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>archetype-resources/pom.xml</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <excludes>
+          <exclude>archetype-resources/pom.xml</exclude>
+        </excludes>
+      </resource>
+    </resources>
   </build>
 </project>
