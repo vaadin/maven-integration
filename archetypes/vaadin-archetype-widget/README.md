@@ -6,6 +6,8 @@ git clone https://github.com/jojule/vaadin-archetype-widget.git
 
 cd vaadin-archetype-widget
 
+Comment out properties-maven-plugin and maven-gpg-plugin from the pom.xml
+
 mvn install
 
 cd ..
