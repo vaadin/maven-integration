@@ -16,6 +16,25 @@
 		<vaadin.plugin.version>\${vaadin.version}</vaadin.plugin.version>
 	</properties>
 
+    <!--     
+	<organization>
+		<name>My Name</name>
+		<url>https://github.com/mygithubaccount/\${ComponentClassName}/</url>
+	</organization>
+    
+	<scm>
+		<url>git://github.com/mygithubaccount/\${ComponentClassName}.git</url>
+		<connection>scm:git:git://github.com/mygithubaccount/\${ComponentClassName}.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:/mygithubaccount/\${ComponentClassName}.git</developerConnection>
+		<tag>\${ComponentClassName} add-on for Vaadin</tag>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/mygithubaccount/\${ComponentClassName}/issues</url>
+	</issueManagement>
+    -->
+
 	<licenses>
 		<license>
 			<name>Apache 2</name>
