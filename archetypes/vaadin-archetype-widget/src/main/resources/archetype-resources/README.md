@@ -48,7 +48,8 @@ To debug project and make code modifications on the fly in the server-side:
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Debugging client-side
 
-The most common way of debugging and making changes to the client-side code is dev-mode. To run it, create another Maven Build configuration for "vaadin:run" target. When it is launched, it opens up GWT dev-mode where you can debug client-side code in regular Java.
+The most common way of debugging and making changes to the client-side code is dev-mode. To run it, create another Maven Build configuration for "vaadin:debug" target. When it is launched, it opens up GWT dev-mode where you can debug client-side code in regular Java. After this, connect a remote debugger to the dev-mode process. In Eclipse this is done by creating a new Debug configuration:
+Run > Debug Configurations... > Remote Java Application > New
 
 Another way of debugging client-side is super dev-mode. To enable it, take a look at WidgetSet.gwt.xml for instructions.
 
