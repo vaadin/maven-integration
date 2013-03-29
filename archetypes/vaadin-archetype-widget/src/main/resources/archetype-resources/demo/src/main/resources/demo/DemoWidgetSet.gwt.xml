@@ -5,11 +5,8 @@
 	-->
 
 	<!-- Inherit DefaultWidgetSet -->
-	<inherits name="com.vaadin.DefaultWidgetSet" /> 
+	<inherits name="${package}.WidgetSet" /> 
 
-	<!-- Widget styles in public -directory -->
-	<stylesheet src="${artifactId}/styles.css"/>
-    
     <!--
      Uncomment the following to compile the widgetset for one browser only.
      This can reduce the GWT compilation time significantly when debugging.

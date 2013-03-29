@@ -16,10 +16,11 @@ Official releases of this add-on are available at Vaadin Directory. For Maven in
 ${symbol_pound}${symbol_pound} Building and running demo
 
 git clone <url of the ${ComponentClassName} repository>
+mvn clean install
+cd demo
+mvn jetty:run
 
-mvm clean package jetty:run
-
-See demo on http://localhost:8080/
+To see the demo, navigate to http://localhost:8080/
 
 ${symbol_pound}${symbol_pound} Development with Eclipse IDE
 
@@ -32,26 +33,23 @@ For further development of this add-on, the following tool-chain is recommended:
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Importing project
 
-Choose File > Import... > Existing Maven Projects from SCM
+Choose File > Import... > Existing Maven Projects
 
 Note that Eclipse may give "Plugin execution not covered by lifecycle configuration" errors for pom.xml. Use "Permanently mark goal resources in pom.xml as ignored in Eclipse build" quick-fix to mark these errors as permanently ignored in your project. Do not worry, the project still works fine. 
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Debugging server-side
 
-If you have a JRebel license, it makes on the fly code changes faster. Just add JRebel nature to your project by clicking project with right mouse button and choosing JRebel > Add JRebel Nature
+If you have not already compiled the widgetset, do it now by running vaadin:install Maven target for ${artifactId}-root project.
 
-To debug project and make code modifications on the fly in the server-side:
-- Start the project with Run > Debug configurations... 
-- Create a new Maven Build configuration for "package jetty:run"
-- If you have JRebel, also enable that from the JRebel tab
-- After you run it, you can access the demo application at http://localhost:8080/ and make code modifications on the server-side classes and SCSS files on the fly.
+If you have a JRebel license, it makes on the fly code changes faster. Just add JRebel nature to your ${artifactId}-demo project by clicking project with right mouse button and choosing JRebel > Add JRebel Nature
+
+To debug project and make code modifications on the fly in the server-side, right-click the ${artifactId}-demo project and choose Debug As > Debug on Server. Navigate to http://localhost:8080/${artifactId}-demo/ to see the application.
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Debugging client-side
 
-The most common way of debugging and making changes to the client-side code is dev-mode. To run it, create another Maven Build configuration for "vaadin:debug" target. When it is launched, it opens up GWT dev-mode where you can debug client-side code in regular Java. After this, connect a remote debugger to the dev-mode process. In Eclipse this is done by creating a new Debug configuration:
-Run > Debug Configurations... > Remote Java Application > New
+The most common way of debugging and making changes to the client-side code is dev-mode. To create debug configuration for it, open ${artifactId}-demo project properties and click "Create Development Mode Launch" button on the Vaadin tab. Right-click newly added "GWT development mode for ${artifactId}-demo.launch" and choose Debug As > Debug Configurations... Open up Classpath tab for the development mode configuration and choose User Entries. Click Advanced... and select Add Folders. Choose Java and Resources under ${artifactId}/src/main and click ok. Now you are ready to start debugging the client-side code by clicking debug. Click Launch Default Browser button in the GWT Development Mode in the launched application. Now you can modify and breakpoints to client-side classes and see changes by reloading the web page. 
 
-Another way of debugging client-side is super dev-mode. To enable it, take a look at WidgetSet.gwt.xml for instructions.
+Another way of debugging client-side is superdev mode. To enable it, uncomment devModeRedirectEnabled line from the end of DemoWidgetSet.gwt.xml located under ${artifactId}-demo resources folder and compile the widgetset once by running vaadin:compile Maven target for ${artifactId}-demo. Refresh ${artifactId}-demo project resources by right clicking the project and choosing Refresh. Click "Create SuperDevMode Launch" button on the Vaadin tab of the ${artifactId}-demo project properties panel to create superder mode code server launch configuration and modify the class path as instructed above. After starting the code server by running SuperDevMode launch as Java application, you can navigate to http://localhost:8080/${artifactId}-demo/?superdevmode. Now all code changes you do to your client side will get compiled as soon as you reload the web page. You can also access Java-sources and set breakpoints inside Chrome if you enable source maps from inspector settings. 
 
  
 ${symbol_pound}${symbol_pound} Release notes

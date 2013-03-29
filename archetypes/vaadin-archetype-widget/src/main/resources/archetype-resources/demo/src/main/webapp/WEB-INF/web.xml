@@ -20,7 +20,7 @@
         <init-param>
             <description>Widgetset for the add-on component demo</description>
             <param-name>widgetset</param-name>
-            <param-value>${package}.WidgetSet</param-value>
+            <param-value>${package}.demo.DemoWidgetSet</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>

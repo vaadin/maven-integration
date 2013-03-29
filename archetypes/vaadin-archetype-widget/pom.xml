@@ -140,6 +140,8 @@
         <filtering>true</filtering>
         <includes>
           <include>archetype-resources/pom.xml</include>
+          <include>archetype-resources/demo/pom.xml</include>
+          <include>archetype-resources/add-on/pom.xml</include>
         </includes>
       </resource>
       <resource>
@@ -147,6 +149,8 @@
         <filtering>false</filtering>
         <excludes>
           <exclude>archetype-resources/pom.xml</exclude>
+          <exclude>archetype-resources/demo/pom.xml</exclude>
+          <exclude>archetype-resources/add-on/pom.xml</exclude>
         </excludes>
       </resource>
     </resources>
