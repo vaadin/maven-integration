@@ -2,11 +2,9 @@
 
 _To try this out:_
 
-git clone https://github.com/jojule/vaadin-archetype-widget.git
+git clone https://github.com/vaadin/maven-integration.git
 
-cd vaadin-archetype-widget
-
-Comment out properties-maven-plugin and maven-gpg-plugin from the pom.xml
+cd archetypes/vaadin-archetype-widget
 
 mvn install
 
