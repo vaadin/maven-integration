@@ -41,6 +41,13 @@
 			</includes>
 		</fileSet>
 
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>add-on</directory>
+			<includes>
+				<include>assembly/*</include>
+			</includes>
+		</fileSet>
+
 		<fileSet filtered="true" encoding="UTF-8">
 			<directory>demo</directory>
 			<includes>
