@@ -1,0 +1,4 @@
+/.project
+/archetypes/*/.settings
+/archetypes/*/.project
+/archetypes/*/target
