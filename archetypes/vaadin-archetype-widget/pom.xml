@@ -40,9 +40,9 @@
     </developer>
   </developers>
   <scm>
-    <url>http://dev.vaadin.com/browser/integration/maven/archetypes/MavenArchetypeWidget</url>
-    <connection>http://dev.vaadin.com/svn/integration/maven/archetypes/MavenArchetypeWidget</connection>
-    <developerConnection>http://dev.vaadin.com/svn/integration/maven/archetypes/MavenArchetypeWidget</developerConnection>
+    <url>https://github.com/vaadin/maven-integration</url>
+    <connection>https://github.com/vaadin/maven-integration.git</connection>
+    <developerConnection>https://github.com/vaadin/maven-integration.git</developerConnection>
   </scm>
   <licenses>
     <license>
