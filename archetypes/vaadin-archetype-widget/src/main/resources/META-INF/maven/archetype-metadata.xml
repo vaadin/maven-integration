@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="vaadin-archetype-widget">
+	<requiredProperties>
+		<requiredProperty key="ComponentClassName" />
+	</requiredProperties>
+	<fileSets>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>LICENSE.txt</include>
+				<include>README.md</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>add-on</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>add-on/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>add-on/src/test/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>add-on/src/main/resources</directory>
+			<includes>
+				<include>**/*.css</include>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>demo</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>demo/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>demo/src/test/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>demo/src/main/resources</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>demo/src/main/webapp</directory>
+			<includes>
+				<include>**/*.xml</include>
+				<include>**/*.MF</include>
+				<include>**/*.scss</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory>demo/src/main/webapp/VAADIN/themes</directory>
+			<includes>
+				<include>**/*.png</include>
+				<include>**/*.ico</include>
+			</includes>
+		</fileSet>
+
+	</fileSets>
+</archetype-descriptor>
