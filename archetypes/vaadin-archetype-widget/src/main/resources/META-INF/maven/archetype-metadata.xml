@@ -13,28 +13,28 @@
 		</fileSet>
 
 		<fileSet filtered="true" encoding="UTF-8">
-			<directory>add-on</directory>
+			<directory>__artifactId__</directory>
 			<includes>
 				<include>pom.xml</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>add-on/src/main/java</directory>
+			<directory>__artifactId__/src/main/java</directory>
 			<includes>
 				<include>**/*.java</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>add-on/src/test/java</directory>
+			<directory>__artifactId__/src/test/java</directory>
 			<includes>
 				<include>**/*.java</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>add-on/src/main/resources</directory>
+			<directory>__artifactId__/src/main/resources</directory>
 			<includes>
 				<include>**/*.css</include>
 				<include>**/*.xml</include>
@@ -42,42 +42,42 @@
 		</fileSet>
 
 		<fileSet filtered="false" encoding="UTF-8">
-			<directory>add-on</directory>
+			<directory>__artifactId__</directory>
 			<includes>
 				<include>assembly/*</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" encoding="UTF-8">
-			<directory>demo</directory>
+			<directory>__artifactId__-demo</directory>
 			<includes>
 				<include>pom.xml</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>demo/src/main/java</directory>
+			<directory>__artifactId__-demo/src/main/java</directory>
 			<includes>
 				<include>**/*.java</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>demo/src/test/java</directory>
+			<directory>__artifactId__-demo/src/test/java</directory>
 			<includes>
 				<include>**/*.java</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>demo/src/main/resources</directory>
+			<directory>__artifactId__-demo/src/main/resources</directory>
 			<includes>
 				<include>**/*.xml</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" encoding="UTF-8">
-			<directory>demo/src/main/webapp</directory>
+			<directory>__artifactId__-demo/src/main/webapp</directory>
 			<includes>
 				<include>**/*.xml</include>
 				<include>**/*.MF</include>
@@ -85,7 +85,7 @@
 			</includes>
 		</fileSet>
 		<fileSet encoding="UTF-8">
-			<directory>demo/src/main/webapp/VAADIN/themes</directory>
+			<directory>__artifactId__-demo/src/main/webapp/VAADIN/themes</directory>
 			<includes>
 				<include>**/*.png</include>
 				<include>**/*.ico</include>

@@ -11,8 +11,8 @@
 	<name>\${ComponentClassName} Add-on Root Project</name>
 
 	<modules>
-		<module>add-on</module>
-		<module>demo</module>
+		<module>\${artifactId}</module>
+		<module>\${artifactId}-demo</module>
 	</modules>
 
 </project>
