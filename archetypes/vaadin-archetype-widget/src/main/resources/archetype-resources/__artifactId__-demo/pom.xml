@@ -118,6 +118,8 @@
 						<fileset>
 							<!-- Clean-up widgetset required for "inplace" compilation -->
 							<directory>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets</directory>
+						</fileset>
+						<fileset>
 							<!-- Clean-up gwt cache -->
 							<directory>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/gwt-unitCache</directory>
 						</fileset>
