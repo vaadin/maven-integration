@@ -21,7 +21,7 @@
 		<Implementation-Title>\${ComponentClassName}</Implementation-Title>
 		<Implementation-Vendor>\${symbol_dollar}{project.organization.name}</Implementation-Vendor>
 		<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
-		<Vaadin-Addon>vaadin-\${symbol_dollar}{artifactId}-\${symbol_dollar}{project.version}.jar</Vaadin-Addon>
+		<Vaadin-Addon>\${symbol_dollar}{artifactId}-\${symbol_dollar}{project.version}.jar</Vaadin-Addon>
 	</properties>
 
     <!--     
