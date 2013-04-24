@@ -18,7 +18,7 @@
 		<!-- ZIP Manifest fields -->
 		<Implementation-Version>\${symbol_dollar}{project.version}</Implementation-Version>
 		<!-- Must not change this because of the Directory -->
-		<Implementation-Title>\${ComponentClassName}</Implementation-Title>
+		<Implementation-Title>\${symbol_dollar}{project.name}</Implementation-Title>
 		<Implementation-Vendor>\${symbol_dollar}{project.organization.name}</Implementation-Vendor>
 		<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
 		<Vaadin-Addon>\${symbol_dollar}{artifactId}-\${symbol_dollar}{project.version}.jar</Vaadin-Addon>
