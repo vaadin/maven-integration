@@ -11,6 +11,5 @@
     <resources>
         <resource>src/main/webapp/META-INF/context.xml</resource>
         <resource>src/main/webapp/META-INF/MANIFEST.MF</resource>
-        <resource>src/main/webapp/WEB-INF/web.xml</resource>
     </resources>
 </archetype>
