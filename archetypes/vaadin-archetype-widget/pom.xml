@@ -7,11 +7,11 @@
   <artifactId>vaadin-archetype-widget</artifactId>
   <packaging>maven-archetype</packaging>
   <name>Vaadin Widget Project Archetype</name>
-  <version>7.0-SNAPSHOT</version>
+  <version>7.1-SNAPSHOT</version>
   <url>http://vaadin.com</url>
   <inceptionYear>2009</inceptionYear>
   <description>
-      This archetype generates a Vaadin widget project for Vaadin 7.0 and a test application.
+      This archetype generates a Vaadin widget project for Vaadin 7.x and a test application for Vaadin 7.1.
   </description>
   <developers>
     <developer>
