@@ -28,14 +28,14 @@ public class DemoUI extends UI
     protected void init(VaadinRequest request) {
 
         // Initialize our new UI component
-        final ${ComponentClassName} ${artifactId} = new ${ComponentClassName}();
+        final ${ComponentClassName} component = new ${ComponentClassName}();
 
         // Show it in the middle of the screen
         final VerticalLayout layout = new VerticalLayout();
         layout.setStyleName("demoContentLayout");
         layout.setSizeFull();
-        layout.addComponent(${artifactId});
-        layout.setComponentAlignment(${artifactId}, Alignment.MIDDLE_CENTER);
+        layout.addComponent(component);
+        layout.setComponentAlignment(component, Alignment.MIDDLE_CENTER);
         setContent(layout);
 
     }
