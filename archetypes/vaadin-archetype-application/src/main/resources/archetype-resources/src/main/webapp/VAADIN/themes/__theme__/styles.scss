@@ -1,0 +1,12 @@
+#set( $symbol_dollar = '$' )
+@import "addons.scss";
+@import "${theme}.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in ${theme}.scss */
+.${theme} {
+  @include addons;
+
+  // Include ${theme} theme styles in your theme
+  @include ${theme};
+}
