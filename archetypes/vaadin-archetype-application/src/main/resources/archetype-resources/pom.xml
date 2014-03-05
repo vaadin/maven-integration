@@ -208,6 +208,19 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
+				<plugin>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<configuration>
+						<wtpversion>2.0</wtpversion>
+						<additionalProjectnatures>
+							<projectnature>com.vaadin.integration.eclipse.widgetsetNature</projectnature>
+						</additionalProjectnatures>
+						<additionalBuildcommands>
+							<buildcommand>com.vaadin.integration.eclipse.widgetsetBuilder</buildcommand>
+							<buildcommand>com.vaadin.integration.eclipse.addonStylesBuilder</buildcommand>
+						</additionalBuildcommands>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
