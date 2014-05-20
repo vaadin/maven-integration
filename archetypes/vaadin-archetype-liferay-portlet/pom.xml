@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>Vaadin 7.2 Liferay 6.2-GA2 archetype</name>
+
+    <groupId>com.vaadin</groupId>
+    <artifactId>vaadin-archetype-liferay-portlet</artifactId>
+    <version>7.2-SNAPSHOT</version>
+
+    <packaging>maven-archetype</packaging>
+    <developers>
+        <developer>
+            <id>pmatti</id>
+            <name>Maciej Przepióra</name>
+            <email>matthew@vaadin.com</email>
+            <organization>Vaadin Ltd</organization>
+            <organizationUrl>http://vaadin.com</organizationUrl>
+            <timezone>+2</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <distribution>repo</distribution>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>2.2</version>
+            </extension>
+        </extensions>
+    </build>
+
+    <description>This archetype creates a self-contained Vaadin Liferay portlet. It packages all Vaadin static resources (widgetset, theme etc.) and doesn't make use of portal-provided resources. Liferay-specific properties should be defined in a maven profile and you should activate this profile when performing builds of a project based on this archetype. Please see https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en
+    </description>
+    <organization>
+        <name>Vaadin Ltd</name>
+        <url>http://vaadin.com</url>
+    </organization>
+    <issueManagement>
+        <system>Trac</system>
+        <url>http://dev.vaadin.com/</url>
+    </issueManagement>
+
+
+</project>
