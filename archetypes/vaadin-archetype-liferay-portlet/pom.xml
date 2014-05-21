@@ -8,6 +8,23 @@
     <version>7.2-SNAPSHOT</version>
 
     <packaging>maven-archetype</packaging>
+    <organization>
+        <name>Vaadin Ltd</name>
+        <url>http://vaadin.com</url>
+    </organization>
+    <url>http://vaadin.com</url>
+    <inceptionYear>2014</inceptionYear>
+    <description>
+        This archetype creates a self-contained Vaadin Liferay portlet.
+        It packages all Vaadin static resources (widgetset, theme etc.)
+        and doesn't make use of portal-provided resources.
+
+        Liferay-specific properties should be defined in a Maven profile
+        and you should activate this profile when performing builds of a
+        project based on this archetype.
+        Please see https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en
+    </description>
+
     <developers>
         <developer>
             <id>pmatti</id>
@@ -19,6 +36,16 @@
         </developer>
     </developers>
 
+    <scm>
+        <url>https://github.com/vaadin/maven-integration</url>
+        <connection>https://github.com/vaadin/maven-integration.git</connection>
+        <developerConnection>https://github.com/vaadin/maven-integration.git</developerConnection>
+    </scm>
+    <issueManagement>
+        <system>Trac</system>
+        <url>http://dev.vaadin.com/</url>
+    </issueManagement>
+
     <licenses>
         <license>
             <name>Apache License Version 2.0</name>
@@ -26,6 +53,62 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0</url>
         </license>
     </licenses>
+    <distributionManagement>
+        <repository>
+            <id>vaadin-staging</id>
+            <name>Vaadin release staging repository</name>
+            <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>vaadin-snapshots</id>
+            <name>Vaadin snapshot repository</name>
+            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>properties-maven-plugin</artifactId>
+                        <version>1.0-alpha-2</version>
+                        <executions>
+                            <execution>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>read-project-properties</goal>
+                                </goals>
+                                <configuration>
+                                    <files>
+                                        <file>${gpg.passphrase.file}</file>
+                                    </files>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
@@ -47,16 +130,6 @@
         </extensions>
     </build>
 
-    <description>This archetype creates a self-contained Vaadin Liferay portlet. It packages all Vaadin static resources (widgetset, theme etc.) and doesn't make use of portal-provided resources. Liferay-specific properties should be defined in a maven profile and you should activate this profile when performing builds of a project based on this archetype. Please see https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en
-    </description>
-    <organization>
-        <name>Vaadin Ltd</name>
-        <url>http://vaadin.com</url>
-    </organization>
-    <issueManagement>
-        <system>Trac</system>
-        <url>http://dev.vaadin.com/</url>
-    </issueManagement>
 
 
 </project>
