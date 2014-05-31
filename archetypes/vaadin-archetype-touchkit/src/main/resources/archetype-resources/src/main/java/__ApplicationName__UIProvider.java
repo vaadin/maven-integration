@@ -9,15 +9,19 @@ import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.UI;
 
 @SuppressWarnings("serial")
-public class MyUIProvider extends UIProvider {
+public class ${ApplicationName}UIProvider extends UIProvider {
 
     @Override
     public Class<? extends UI> getUIClass(UIClassSelectionEvent event) {
-        String userAgent = event.getRequest().getHeader("user-agent").toLowerCase();
-        if (overrideMobileUA() || userAgent.contains("mobile")) {
-            return MyTouchKitUI.class;
+
+        boolean mobileUserAgent = event.getRequest().getHeader("user-agent")
+                .toLowerCase().contains("mobile");
+        boolean mobileParameter = event.getRequest().getParameter("mobile") != null;
+
+        if (overrideMobileUA() || mobileUserAgent || mobileParameter) {
+            return ${ApplicationName}TouchKitUI.class;
         } else {
-            return MyFallbackUI.class;
+            return ${ApplicationName}FallbackUI.class;
         }
     }
 

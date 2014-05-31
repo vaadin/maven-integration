@@ -11,10 +11,9 @@ import com.vaadin.ui.UI;
 
 /**
  * This UI is served for browsers that don't support TouchKit.
- *
  */
 @SuppressWarnings("serial")
-public class MyFallbackUI extends UI {
+public class ${ApplicationName}FallbackUI extends UI {
 
     @Override
     protected void init(VaadinRequest request) {

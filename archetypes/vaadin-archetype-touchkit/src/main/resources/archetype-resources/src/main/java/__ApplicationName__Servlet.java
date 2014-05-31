@@ -13,9 +13,9 @@ import com.vaadin.server.SessionInitListener;
 
 @SuppressWarnings("serial")
 @WebServlet("/*")
-public class MyServlet extends TouchKitServlet {
+public class ${ApplicationName}Servlet extends TouchKitServlet {
 
-    private MyUIProvider uiProvider = new MyUIProvider();
+    private ${ApplicationName}UIProvider uiProvider = new ${ApplicationName}UIProvider();
 
     @Override
     protected void servletInitialized() throws ServletException {
