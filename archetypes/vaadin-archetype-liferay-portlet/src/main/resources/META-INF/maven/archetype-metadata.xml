@@ -61,6 +61,12 @@
 				<include>**/*.scss</include>
 			</includes>
 		</fileSet>
+		<fileSet filtered="false">
+			<directory>src/main/webapp</directory>
+			<includes>
+				<include>icon.png</include>
+			</includes>
+		</fileSet>
 		<fileSet filtered="true">
 			<directory />
 			<includes>
