@@ -7,12 +7,12 @@
     <artifactId>vaadin-archetype-touchkit</artifactId>
     <packaging>maven-archetype</packaging>
     <name>Vaadin TouchKit Application Archetype</name>
-    <version>4.0.0-SNAPSHOT</version>
+    <version>4.0.0.beta2</version>
     <url>http://vaadin.com</url>
     <inceptionYear>2013</inceptionYear>
     <description>
-      This archetype generates a simple Vaadin application using TouchKit as a Maven project.
-  </description>
+      Generates a simple Vaadin application using TouchKit.
+    </description>
 
     <profiles>
         <profile>

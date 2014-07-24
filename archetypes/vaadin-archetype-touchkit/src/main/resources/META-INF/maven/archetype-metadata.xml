@@ -34,5 +34,11 @@
                 <include>README.txt</include>
             </includes>
         </fileSet>
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+            <directory>cordova</directory>
+            <includes>
+                <include>*</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </archetype-descriptor>

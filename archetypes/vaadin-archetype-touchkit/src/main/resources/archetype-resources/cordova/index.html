@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>${ApplicationName}</title>
+    </head>
+    <body style='margin: 0px'>
+        <!-- Be sure that network plugin is enabled -->
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <!-- Define your vaadin url here -->
+        <script>
+            // Mandatory: The url of your Vaadin mobile app.
+            window.vaadinAppUrl = 'http://your.vaadin.application.url';
+
+            // Optional: You could disable iframe for certain devices.
+            // window.iframeDisabled = false;
+
+            // Optional: Add a top margin, useful to avoid status bar overlapping app.
+            // Note, that the recomended way is to use the Cordova StatusBar plugin.
+            // window.iframeTopMargin = /(iPhone|iPad).+ OS (7|8)/i.test(navigator.userAgent) ? 20 : 0;
+        </script>
+
+        <!-- Make Vaadin mobile script load the app and route cordova events to it -->
+        <script type="text/javascript" src="vaadinMobile.js"></script>
+    </body>
+</html>
