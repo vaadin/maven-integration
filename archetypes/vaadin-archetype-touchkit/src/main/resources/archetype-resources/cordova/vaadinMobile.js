@@ -35,7 +35,7 @@
         s.backgroundColor = '#00b4f0';
 
         // 15 secs. progress bar which changes to red after 5 secs
-        s.transition = 'width 15s cubic-bezier(.23, 1, .32, 1) 0s, background-color 8s linear 5s';
+        s.webkitTransition = s.transition = 'width 15s cubic-bezier(.23, 1, .32, 1) 0s, background-color 8s linear 5s';
         // we have to force re-flow in order to make transition work
         e.offsetWidth;
         // animate the loading bar
@@ -55,11 +55,11 @@
         s.width = '100%';
         s.left = '0px';
         s.top = top + 'px';
-        s.height = 'calc(100% - ' + top + 'px)';
+        s.height = top ? 'calc(100% - ' + top + 'px)' : '100%';
         s.border = 'none';
         s.opacity = 0;
-        s.transition = 'all .8s ease-out';
-        s.webkitTransform = 'scale(0)';
+        s.webkitTransition = s.transition = 'all .8s ease-out';
+        s.webkitTransform = s.transform = 'scale(0)';
         return e;
     }
 
