@@ -79,6 +79,7 @@
                 loading.style.display = 'none';
                 iframe.style.opacity = 1;
                 iframe.style.webkitTransform = 'scale(1)';
+                resume();
             }
         }, false);
         // Load Vaadin app in an iframe
@@ -103,14 +104,15 @@
         }
         function resume() {
             // send a message with connection status periodically to the app
+            clearInterval(intervalId);
             intervalId = setInterval(check, 30000);
+            check();
             sendMessage('resume');
         }
         function pause() {
             clearInterval(intervalId);
             sendMessage('pause');
         }
-        resume();
 
         // Listen for cordova offline/online events
         document.addEventListener('offline', check, false);
