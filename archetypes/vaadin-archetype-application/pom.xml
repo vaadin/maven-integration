@@ -7,7 +7,7 @@
   <artifactId>vaadin-archetype-application</artifactId>
   <packaging>maven-archetype</packaging>
   <name>Vaadin Application Archetype</name>
-  <version>7.1-SNAPSHOT</version>
+  <version>7.3-SNAPSHOT</version>
   <url>http://vaadin.com</url>
   <inceptionYear>2012</inceptionYear>
   <description>
@@ -45,12 +45,12 @@
     <repository>
       <id>vaadin-staging</id>
       <name>Vaadin release staging repository</name>
-      <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
     <snapshotRepository>
       <id>vaadin-snapshots</id>
       <name>Vaadin snapshot repository</name>
-      <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+      <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
   <properties>
@@ -101,7 +101,7 @@
   <repositories>
     <repository>
       <id>vaadin-snapshots</id>
-      <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+      <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
       <releases>
         <enabled>false</enabled>
       </releases>

@@ -5,7 +5,7 @@
 
     <groupId>com.vaadin</groupId>
     <artifactId>vaadin-archetype-liferay-portlet</artifactId>
-    <version>7.2-SNAPSHOT</version>
+    <version>7.3-SNAPSHOT</version>
 
     <packaging>maven-archetype</packaging>
     <organization>
@@ -57,12 +57,12 @@
         <repository>
             <id>vaadin-staging</id>
             <name>Vaadin release staging repository</name>
-            <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
         <snapshotRepository>
             <id>vaadin-snapshots</id>
             <name>Vaadin snapshot repository</name>
-            <url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+            <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <properties>

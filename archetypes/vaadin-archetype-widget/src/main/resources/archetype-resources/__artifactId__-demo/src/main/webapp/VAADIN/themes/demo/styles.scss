@@ -1,5 +1,5 @@
 #set( $symbol_dollar = '$' )
-@import "../reindeer/reindeer.scss";
+@import "../valo/valo.scss";
 
 ${symbol_dollar}gray: #d1d1cf;
 ${symbol_dollar}green: #40b527;
@@ -8,8 +8,8 @@ ${symbol_dollar}darkgreen: darken(${symbol_dollar}green, 30%);
 // Prefix all selectors in your theme with .demo
 .demo {
 
-	// Include reindeer theme styles in your theme
-	@include reindeer;
+	// Include valo theme styles in your theme
+	@include valo;
 
 	// You can style your demo app right here
 	.demoContentLayout {
