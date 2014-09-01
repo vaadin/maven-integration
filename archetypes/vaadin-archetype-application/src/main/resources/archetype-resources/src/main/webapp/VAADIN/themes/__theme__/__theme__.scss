@@ -27,16 +27,9 @@
 // For more information, see: https://vaadin.com/book/-/page/themes.valo.html
 // Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
 
-
-/* Import the valo theme. */
-/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
 @import "../valo/valo.scss";
 
-/* This contains all of your theme. */
-/* If somebody wants to extend the theme she will include this mixin. */
 @mixin ${theme} {
-  /* Include all the styles from the reindeer theme */
   @include valo;
-
-  /* Insert your theme rules here */
+  // Insert your own theme rules here
 }
