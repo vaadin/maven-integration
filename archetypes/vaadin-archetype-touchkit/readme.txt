@@ -24,7 +24,7 @@ USING THE ARCHETYPE:
     $ mvn archetype:generate \
         -DarchetypeGroupId=com.vaadin \
         -DarchetypeArtifactId=vaadin-archetype-touchkit \
-        -DarchetypeVersion=4.0.0.alpha3 \
+        -DarchetypeVersion=4.0.0 \
         -DgroupId=your.company \
         -DartifactId=your-product-name \
         -Dpackage=your.company.product \

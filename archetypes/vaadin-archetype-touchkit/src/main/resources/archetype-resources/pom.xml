@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <vaadin.version>[7.3.0,7.3.9999]</vaadin.version>
         <vaadin.version.maven>7.3.0</vaadin.version.maven>
-        <touchkit.version>4.0.0.rc1</touchkit.version>
+        <touchkit.version>4.0.0</touchkit.version>
     </properties>
     <repositories>
         <repository>
