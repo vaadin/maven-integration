@@ -14,13 +14,18 @@
 		<portlet-name>${portletName}</portlet-name>
 		<display-name>${portletDisplayName}</display-name>
 
-		<portlet-class>${package}.CustomVaadinPortlet</portlet-class>
+		<portlet-class>com.vaadin.server.VaadinPortlet</portlet-class>
 
 		<init-param>
 			<name>UI</name>
 			<value>${package}.${uiClassName}</value>
 		</init-param>
-        
+
+		<init-param>
+			<name>vaadin.resources.path</name>
+			<value>PORTLET_CONTEXT</value>
+		</init-param>
+
 		<supports>
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
