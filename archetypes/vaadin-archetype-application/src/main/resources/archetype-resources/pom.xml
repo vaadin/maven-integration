@@ -22,7 +22,7 @@
 		</repository>
 		<repository>
 			<id>vaadin-snapshots</id>
-			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+			<url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -34,7 +34,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>vaadin-snapshots</id>
-			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+			<url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
