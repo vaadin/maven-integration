@@ -94,7 +94,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-testbench-api</artifactId>
-            <version>LATEST</version>
+            <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
 		
