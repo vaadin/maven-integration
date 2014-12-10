@@ -6,8 +6,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<requiredProperties>
-		<requiredProperty key="vaadinVersion">
-			<defaultValue>7.2.0</defaultValue>
+		<requiredProperty key="liferayVersion">
+			<defaultValue>[6.1.0,)</defaultValue>
 		</requiredProperty>
 		<requiredProperty key="uiClassName">
 			<defaultValue>MyPortletUI</defaultValue>
@@ -65,12 +65,6 @@
 			<directory>src/main/webapp</directory>
 			<includes>
 				<include>icon.png</include>
-			</includes>
-		</fileSet>
-		<fileSet filtered="true">
-			<directory />
-			<includes>
-				<include>pom.xml</include>
 			</includes>
 		</fileSet>
 	</fileSets>

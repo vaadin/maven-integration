@@ -1,20 +1,20 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>${groupId}</groupId>
-	<artifactId>${artifactId}</artifactId>
-	<version>${version}</version>
-	<name>${artifactId} Portlet</name>
+	<groupId>\${groupId}</groupId>
+	<artifactId>\${artifactId}</artifactId>
+	<version>\${version}</version>
+	<name>\${artifactId} Portlet</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<vaadin.version>${vaadinVersion}</vaadin.version>
-		<vaadin.plugin.version>${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
+		<vaadin.version>${project.version}</vaadin.version>
+		<vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
+        <liferay.version>${liferayVersion}</liferay.version>
 	</properties>
-
 	<repositories>
 		<repository>
 			<id>liferay-releases</id>
@@ -62,30 +62,30 @@
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-server</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version>
+			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client-compiled</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version>
+			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<!-- Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory).
 			For widgetset compilation, vaadin-client-compiler is automatically added
 			on the compilation classpath by vaadin-maven-plugin so normally there is
 			no need for an explicit dependency. -->
 		<!-- <dependency> <groupId>com.vaadin</groupId> <artifactId>vaadin-client-compiler</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version> <scope>provided</scope> </dependency> -->
+			<version>\${symbol_dollar}{vaadin.version}</version> <scope>provided</scope> </dependency> -->
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version>
+			<version>\${symbol_dollar}{vaadin.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
-			<version>${symbol_dollar}{vaadin.version}</version>
+			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 
 		<!-- Liferay dependencies -->
@@ -107,14 +107,14 @@
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>portal-service</artifactId>
-			<version>${symbol_dollar}{liferay.version}</version>
+			<version>\${symbol_dollar}{liferay.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>util-java</artifactId>
-			<version>${symbol_dollar}{liferay.version}</version>
+			<version>\${symbol_dollar}{liferay.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -122,6 +122,7 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
@@ -156,19 +157,19 @@
 			<plugin>
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
-				<version>${vaadin.plugin.version}</version>
+				<version>\${symbol_dollar}{vaadin.plugin.version}</version>
 				<configuration>
 					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
 					<!-- <runTarget>mobilemail</runTarget> -->
 					<!-- We are doing "inplace" but into subdir VAADIN/widgetsets. This
 						way compatible with Vaadin eclipse plugin. -->
-					<webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets
+					<webappDirectory>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets
 					</webappDirectory>
-					<hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets
+					<hostedWebapp>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets
 					</hostedWebapp>
 					<!-- Most Vaadin apps don't need this stuff, guide that to target -->
-					<persistentunitcachedir>${symbol_dollar}{project.build.directory}</persistentunitcachedir>
-					<deploy>${symbol_dollar}{project.build.directory}/gwt-deploy</deploy>
+					<persistentunitcachedir>\${symbol_dollar}{project.build.directory}</persistentunitcachedir>
+					<deploy>\${symbol_dollar}{project.build.directory}/gwt-deploy</deploy>
 					<!-- Compile report is not typically needed either, saves hunreds of
 						MB disk -->
 					<compileReport>false</compileReport>
@@ -183,7 +184,7 @@
 					<execution>
 						<configuration>
 							<!-- if you don't specify any modules, the plugin will find them -->
-							<!-- <modules> <module>${package}.AppWidgetSet</module>
+							<!-- <modules> <module>\${package}.AppWidgetSet</module>
 								</modules> -->
 						</configuration>
 						<goals>
@@ -201,13 +202,13 @@
 			<plugin>
 				<groupId>com.liferay.maven.plugins</groupId>
 				<artifactId>liferay-maven-plugin</artifactId>
-				<version>${symbol_dollar}{liferay.maven.plugin.version}</version>
+				<version>\${symbol_dollar}{liferay.maven.plugin.version}</version>
 				<configuration>
-					<autoDeployDir>${symbol_dollar}{liferay.auto.deploy.dir}</autoDeployDir>
-					<appServerDeployDir>${symbol_dollar}{liferay.app.server.deploy.dir}</appServerDeployDir>
-					<appServerLibGlobalDir>${symbol_dollar}{liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
-					<appServerPortalDir>${symbol_dollar}{liferay.app.server.portal.dir}</appServerPortalDir>
-					<liferayVersion>${symbol_dollar}{liferay.version}</liferayVersion>
+					<autoDeployDir>\${symbol_dollar}{liferay.auto.deploy.dir}</autoDeployDir>
+					<appServerDeployDir>\${symbol_dollar}{liferay.app.server.deploy.dir}</appServerDeployDir>
+					<appServerLibGlobalDir>\${symbol_dollar}{liferay.app.server.lib.global.dir}</appServerLibGlobalDir>
+					<appServerPortalDir>\${symbol_dollar}{liferay.app.server.portal.dir}</appServerPortalDir>
+					<liferayVersion>\${symbol_dollar}{liferay.version}</liferayVersion>
 					<pluginType>portlet</pluginType>
 				</configuration>
 			</plugin>
@@ -231,7 +232,7 @@
 											vaadin-maven-plugin
 										</artifactId>
 										<versionRange>
-											[7.2.0,)
+											[${project.version},)
 										</versionRange>
 										<goals>
 											<goal>resources</goal>
