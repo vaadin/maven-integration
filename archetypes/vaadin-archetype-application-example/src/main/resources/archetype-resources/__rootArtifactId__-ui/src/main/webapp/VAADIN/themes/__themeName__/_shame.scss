@@ -1,0 +1,48 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+// This should be in the Valo theme as a shorthand
+${symbol_dollar}v-layout-margin: ${symbol_dollar}v-layout-margin-top ${symbol_dollar}v-layout-margin-right ${symbol_dollar}v-layout-margin-bottom ${symbol_dollar}v-layout-margin-left !default;
+
+
+
+// This should be in the Valo theme
+@mixin valo-table-header-style (${symbol_dollar}primary-stylename: v-table, ${symbol_dollar}background-color: ${symbol_dollar}v-background-color, ${symbol_dollar}font-color: null) {
+  ${symbol_dollar}border-color: first-color(valo-border(${symbol_dollar}color: ${symbol_dollar}background-color, ${symbol_dollar}strength: 0.8));
+
+  .${symbol_pound}{${symbol_dollar}primary-stylename}-header-wrap,
+  .${symbol_pound}{${symbol_dollar}primary-stylename}-header-drag {
+    @include valo-gradient(${symbol_dollar}background-color);
+    text-shadow: valo-text-shadow(${symbol_dollar}background-color: ${symbol_dollar}background-color);
+    color: ${symbol_dollar}font-color or valo-font-color(${symbol_dollar}background-color);
+  }
+
+  .${symbol_pound}{${symbol_dollar}primary-stylename}-header-wrap {
+    border-bottom: ${symbol_dollar}v-table-border-width solid;
+  }
+
+  .${symbol_pound}{${symbol_dollar}primary-stylename}-header table {
+    @include box-shadow(0 0 0 ${symbol_dollar}v-table-border-width ${symbol_dollar}border-color);
+  }
+
+  .${symbol_pound}{${symbol_dollar}primary-stylename}-header-wrap,
+  .${symbol_pound}{${symbol_dollar}primary-stylename}-header-drag,
+  .${symbol_pound}{${symbol_dollar}primary-stylename}-caption-container {
+    border-color: ${symbol_dollar}border-color;
+  }
+
+  .${symbol_pound}{${symbol_dollar}primary-stylename}-body {
+    border-top: none;
+  }
+}
+
+
+// Workarounds for bugs in Valo
+@mixin shame {
+
+  // Move default top menu space from UI to main screen only - workaround for ${symbol_pound}14679
+  .v-ui[width-range~="0-800px"] {
+    padding-top: 0;
+  }
+
+}

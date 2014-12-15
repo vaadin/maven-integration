@@ -1,0 +1,348 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//${symbol_dollar}v-font-size: 16px;
+//${symbol_dollar}v-font-weight: 300;
+//${symbol_dollar}v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//${symbol_dollar}v-border: 1px solid (v-shade 0.7);
+//${symbol_dollar}v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//${symbol_dollar}v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//${symbol_dollar}v-app-background-color: ${symbol_dollar}v-background-color;
+
+// Affects the visual appearance of all components
+//${symbol_dollar}v-gradient: v-linear 8%;
+//${symbol_dollar}v-bevel-depth: 30%;
+//${symbol_dollar}v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//${symbol_dollar}v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//${symbol_dollar}v-friendly-color: ${symbol_pound}2c9720;
+//${symbol_dollar}v-error-indicator-color: ${symbol_pound}ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+${symbol_dollar}v-luminance-threshold: 180 !default;
+
+${symbol_dollar}editor-background-color: ${symbol_pound}3b3f42 !default;
+${symbol_dollar}valo-menu-background-color: ${symbol_dollar}editor-background-color !default;
+
+${symbol_dollar}v-focus-color: rgb(96, 160, 234) !default;
+${symbol_dollar}v-error-indicator-color: ${symbol_pound}eb2977 !default;
+${symbol_dollar}v-friendly-color: rgb(54, 185, 85);
+${symbol_dollar}table-header-background-color: ${symbol_pound}989fa7 !default;
+${symbol_dollar}table-header-font-color: ${symbol_pound}fff !default;
+
+${symbol_dollar}v-font-size: 15px !default;
+${symbol_dollar}v-font-weight: 400 !default;
+${symbol_dollar}v-unit-size: 32px !default;
+
+${symbol_dollar}login-info-width: 300px !default;
+${symbol_dollar}login-info-opacity: 0.7 !default;
+${symbol_dollar}login-background-color: ${symbol_dollar}editor-background-color !default;
+// Get more background images from unsplash.com (remember to optimize the filesize)
+${symbol_dollar}login-background-image: "img/archetype-login-bg.jpg" !default;
+
+${symbol_dollar}editor-shadow: 0 0 10px 10px rgba(0,0,0,.1) !default;
+${symbol_dollar}editor-embed-background-color: darken(${symbol_dollar}editor-background-color, 5%) !default;
+${symbol_dollar}editor-raised-background-color: lighten(${symbol_dollar}editor-background-color, 10%) !default;
+${symbol_dollar}editor-caption-font-color: valo-font-color(${symbol_dollar}editor-background-color, 0.5) !default;
+
+${symbol_dollar}v-layout-margin-top: round(${symbol_dollar}v-unit-size / 1.5) !default;
+${symbol_dollar}v-layout-margin-right: ${symbol_dollar}v-layout-margin-top !default;
+${symbol_dollar}v-layout-margin-bottom: ${symbol_dollar}v-layout-margin-top !default;
+${symbol_dollar}v-layout-margin-left: ${symbol_dollar}v-layout-margin-top !default;
+${symbol_dollar}v-layout-spacing-vertical: round(${symbol_dollar}v-unit-size / 1.8) !default;
+${symbol_dollar}v-layout-spacing-horizontal: round(${symbol_dollar}v-unit-size / 1.8) !default;
+
+
+@import "../valo/valo.scss";
+
+
+@mixin ${themeName} {
+  @include valo;
+
+
+  .v-table {
+    @include valo-table-header-style(${symbol_dollar}background-color: ${symbol_dollar}table-header-background-color, ${symbol_dollar}font-color: ${symbol_dollar}table-header-font-color);
+  }
+
+  // login screen - for small screens, see below
+  .login-screen {
+    background: ${symbol_dollar}editor-background-color;
+
+    @if ${symbol_dollar}login-background-image {
+      background-image: url(${symbol_pound}{${symbol_dollar}login-background-image});
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+
+    width: 100%;
+    height: 100%;
+
+    .login-form {
+      @include valo-panel-style;
+      border: none;
+      padding: ${symbol_dollar}v-layout-margin;
+      @include valo-animate-in-fade(${symbol_dollar}duration: 1s);
+    }
+
+    .login-information {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: ${symbol_dollar}login-info-width;
+      height: 100%;
+      background: ${symbol_dollar}v-selection-color; // For IE8
+      background-color: rgba(${symbol_dollar}v-selection-color, ${symbol_dollar}login-info-opacity);
+      padding: ${symbol_dollar}v-layout-margin;
+      color: valo-font-color(${symbol_dollar}v-selection-color, 0.9);
+      @include animation(valo-animate-in-fade 1s 1s backwards);
+
+      h1 {
+        color: inherit;
+      }
+    }
+
+    .centering-layout {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      padding-left: ${symbol_dollar}login-info-width;
+
+      .v-slot {
+        height: 100%;
+      }
+    }
+  }
+
+  // makes the CRUD view keep the sidebar editor within the view as sidebar is absolutely positioned
+  .crud-view {
+  	position: relative;
+
+    .filter-textfield {
+      width: round(${symbol_dollar}v-unit-size * 9);
+    }
+  }
+
+  // sidebar editor for CRUD, scrolls if there is not enough space vertically
+  .product-form-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    width: round(${symbol_dollar}v-unit-size * 9);
+    height: 100%;
+    overflow: auto;
+    padding: ${symbol_dollar}v-layout-spacing-vertical ${symbol_dollar}v-layout-spacing-horizontal;
+    background-color: ${symbol_dollar}editor-background-color;
+    color: valo-font-color(${symbol_dollar}editor-background-color, 0.8);
+
+    // Set the context color for the style mixins
+    ${symbol_dollar}temp: ${symbol_dollar}v-app-background-color;
+    ${symbol_dollar}v-app-background-color: ${symbol_dollar}editor-background-color;
+
+    .v-textfield {
+      @include valo-textfield-style(${symbol_dollar}background-color: ${symbol_dollar}editor-embed-background-color);
+    }
+
+    .v-checkbox {
+      @include valo-checkbox-style(${symbol_dollar}background-color: ${symbol_dollar}editor-raised-background-color);
+    }
+
+    .v-filterselect {
+      @include valo-combobox-style(${symbol_dollar}background-color: ${symbol_dollar}editor-raised-background-color, ${symbol_dollar}bevel: ${symbol_dollar}v-bevel, ${symbol_dollar}gradient: ${symbol_dollar}v-gradient);
+    }
+
+    // Restore variable
+    ${symbol_dollar}v-app-background-color: ${symbol_dollar}temp;
+
+    .v-button {
+      display: block;
+    }
+
+    .v-caption {
+      color: ${symbol_dollar}editor-caption-font-color;
+    }
+
+    // try to ensure there is space under the last button also on small displays (does not work on IE8)
+    .form-layout > .v-expand > .v-slot:last-child {
+      padding-bottom: ${symbol_dollar}v-layout-spacing-vertical;
+    }
+
+    @include transition(all 300ms);
+    @include transform(translatex(100%));
+  }
+
+  // Enables animation for opening CRUD editor
+  .visible {
+  	@include transform(none);
+    @include box-shadow(${symbol_dollar}editor-shadow);
+  }
+
+  // About view
+
+  .about-view {
+    overflow: auto;
+
+    .about-content {
+      @include valo-panel-style;
+      max-width: 500px;
+      // Override the default of CustomLayout
+      padding: ${symbol_dollar}v-unit-size !important;
+    }
+  }
+
+  // Style rules for smaller display sizes
+
+  // No top menu on the login view, login screen layout changes
+  .v-ui[width-range~="0-800px"] {
+
+    .main-screen {
+      padding-top: ${symbol_dollar}v-unit-size;
+    }
+    // TODO also move loading indicator if using the hack above
+
+    // More compact login screen
+    .login-screen {
+      height: auto;
+      min-height: 100%;
+
+      .login-information {
+        position: static;
+        width: 100%;
+        height: auto;
+
+        .v-label {
+          text-align: center;
+
+          h1 {
+            margin-top: .4em;
+          }
+        }
+      }
+
+      .centering-layout {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding-left: 0;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+      .login-form {
+        width: 400px;
+        max-width: 100%;
+
+        table {
+          width: 100%;
+        }
+
+        .v-textfield {
+          width: 100% !important;
+        }
+
+        .v-formlayout-captioncell,
+        .v-formlayout-contentcell,
+        .v-formlayout-errorcell {
+          display: block;
+          text-align: center;
+          padding-top: 0;
+        }
+        .buttons {
+          width: 100%;
+          .v-button {
+            display: block;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  // hide the logo for a more compact header when the menu is narrow
+  .v-ui[width-range~="801px-1100px"] .valo-menu-part {
+    .v-slot-logo,
+    .v-slot-logo + .v-spacing {
+      display: none;
+    }
+  }
+
+  // Move logout button to the bottom of the menu on large screens
+  .v-ui[width-range~="801px-"] .valo-menu-part {
+    .user-menu {
+      position: fixed;
+      bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  // Editor should take whole browser width when we are under 550px in width.
+  .v-ui[width-range~="0-550px"] {
+    .product-form-wrapper {
+      width:100%;
+    }
+
+    // Remove margins around the table and reduce top bar margins on small screens
+    .crud-view .crud-main-layout {
+      padding: 0 0 0 0;
+
+      .top-bar {
+        // Use spacing to the table below as the margin - smaller than default margin
+        padding: ${symbol_dollar}v-layout-spacing-vertical ${symbol_dollar}v-layout-spacing-horizontal 0 ${symbol_dollar}v-layout-spacing-horizontal;
+
+        .filter-textfield {
+          width: 100%;
+        }
+      }
+    }
+
+    // About view fills the display on small screens
+    .about-view {
+      padding-bottom: 0;
+      padding-top: 0;
+      height: auto;
+      padding: 0.1 * ${symbol_dollar}v-unit-size;
+
+      .v-slot-about-content {
+        overflow: auto;
+      }
+
+      .about-content {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        vertical-align: top;
+        padding: 0;
+        background: transparent;
+        @include box-shadow(none);
+      }
+    }
+  }
+
+  // Override valo default narrow menu button on small screens to have the full logout text visible
+  .v-ui[width-range~="0-500px"] {
+    .valo-menu .v-menubar-user-menu .v-menubar-menuitem-caption {
+      width: auto;
+    }
+  }
+
+  // Hide spinner buttons from number input
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+}
