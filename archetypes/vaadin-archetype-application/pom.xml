@@ -8,6 +8,15 @@
   <packaging>maven-archetype</packaging>
 
   <name>vaadin-archetype-application</name>
+  <url>http://vaadin.com</url>
+  <description>
+      This archetype generates a sample Vaadin application as a multi-module Maven project.
+  </description>
+  <scm>
+    <url>https://github.com/vaadin/maven-integration</url>
+    <connection>https://github.com/vaadin/maven-integration.git</connection>
+    <developerConnection>ssh://user@dev.vaadin.com:29418/maven-integration</developerConnection>
+  </scm>
 
   <build>
     <extensions>
@@ -64,6 +73,12 @@
       <organization>Vaadin</organization>
       <organizationUrl>https://vaadin.com</organizationUrl>
     </developer>
+    <developer>
+      <name>Henri Sara</name>
+      <email>hesara@vaadin.com</email>
+      <organization>Vaadin</organization>
+      <organizationUrl>https://vaadin.com</organizationUrl>
+    </developer>
   </developers>
 
   <licenses>
@@ -73,4 +88,59 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>properties-maven-plugin</artifactId>
+            <version>1.0-alpha-2</version>
+            <executions>
+              <execution>
+                <phase>initialize</phase>
+                <goals>
+                  <goal>read-project-properties</goal>
+                </goals>
+                <configuration>
+                  <files>
+                    <file>${gpg.passphrase.file}</file>
+                  </files>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <distributionManagement>
+    <repository>
+      <id>vaadin-staging</id>
+      <name>Vaadin release staging repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>vaadin-snapshots</id>
+      <name>Vaadin snapshot repository</name>
+      <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
 </project>
