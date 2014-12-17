@@ -1,20 +1,128 @@
-#set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>\${groupId}</groupId>
 	<artifactId>\${artifactId}</artifactId>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>
 	<version>\${version}</version>
-	<name>Vaadin Web Application</name>
+	<name>\${rootArtifactId}-parent</name>
+
+	<developers>
+		<developer>
+			<name>Petter Holmström</name>
+			<email>petter@vaadin.com</email>
+			<organization>Vaadin</organization>
+			<organizationUrl>https://vaadin.com</organizationUrl>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>UNLICENSE</name>
+			<url>http://unlicense.org/</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<vaadin.version>${project.version}</vaadin.version>
 		<vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
+		<jetty.plugin.version>9.2.3.v20140905</jetty.plugin.version>
+		<project.source.version>1.7</project.source.version>
+		<project.target.version>1.7</project.target.version>
+		<project.encoding>UTF-8</project.encoding>
 	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<encoding>\${symbol_dollar}{project.encoding}</encoding>
+					<source>\${symbol_dollar}{project.source.version}</source>
+					<target>\${symbol_dollar}{project.target.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<encoding>\${symbol_dollar}{project.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.vaadin</groupId>
+					<artifactId>vaadin-maven-plugin</artifactId>
+					<version>\${symbol_dollar}{vaadin.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.0.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-server</artifactId>
+				<version>\${symbol_dollar}{vaadin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-push</artifactId>
+				<version>\${symbol_dollar}{vaadin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-client</artifactId>
+				<version>\${symbol_dollar}{vaadin.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-client-compiler</artifactId>
+				<version>\${symbol_dollar}{vaadin.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-themes</artifactId>
+				<version>\${symbol_dollar}{vaadin.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<repositories>
 		<repository>
 			<id>vaadin-addons</id>
@@ -22,264 +130,13 @@
 		</repository>
 		<repository>
 			<id>vaadin-snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
 			<snapshots>
-				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>vaadin-snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-	<dependencies>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-server</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiled</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
-		</dependency>
-		<!--
-		  Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory).
-		  
-		  For widgetset compilation, vaadin-client-compiler is automatically added on the
-		  compilation classpath by vaadin-maven-plugin so normally there is no need for an
-		  explicit dependency.
-		-->
-		<!--
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiler</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		-->
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-push</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-themes</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
-			<scope>provided</scope>
-		</dependency>
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-testbench-api</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-		
-	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<!-- As we are doing "inplace" GWT compilation, ensure the widgetset -->
-			<!-- directory is cleaned properly -->
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.4.1</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>src/main/webapp/VAADIN/widgetsets</directory>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>com.vaadin</groupId>
-				<artifactId>vaadin-maven-plugin</artifactId>
-				<version>\${symbol_dollar}{vaadin.plugin.version}</version>
-				<configuration>
-					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
-					<!-- <runTarget>mobilemail</runTarget> -->
-					<!-- We are doing "inplace" but into subdir VAADIN/widgetsets. This 
-						way compatible with Vaadin eclipse plugin. -->
-					<webappDirectory>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets
-					</webappDirectory>
-					<hostedWebapp>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets
-					</hostedWebapp>
-					<!-- Most Vaadin apps don't need this stuff, guide that to target -->
-					<persistentunitcachedir>\${symbol_dollar}{project.build.directory}</persistentunitcachedir>
-					<deploy>\${symbol_dollar}{project.build.directory}/gwt-deploy</deploy>
-					<!-- Compile report is not typically needed either, saves hunreds of mb disk -->
-					<compileReport>false</compileReport>
-					<noServer>true</noServer>
-					<!-- Remove draftCompile when project is ready -->
-					<draftCompile>false</draftCompile>
-					
-					<style>OBF</style>
-					<strict>true</strict>
-					<runTarget>http://localhost:8080/</runTarget>
-				</configuration>
-				<executions>
-					<execution>
-						<configuration>
-							<!-- if you don't specify any modules, the plugin will find them -->
-							<!-- <modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module> 
-								</modules> -->
-						</configuration>
-						<goals>
-							<goal>clean</goal>
-							<goal>resources</goal>
-							<goal>update-theme</goal>
-							<goal>update-widgetset</goal>
-							<goal>compile-theme</goal>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-                        <plugin>  
-                                <groupId>org.eclipse.jetty</groupId>
-                                <artifactId>jetty-maven-plugin</artifactId>
-                                <version>9.2.3.v20140905</version>
-                        </plugin>
-			
-			          
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <stopPort>8005</stopPort>
-                    <stopKey>STOP</stopKey>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>start-jetty</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-                        <configuration>
-                            <scanIntervalSeconds>0</scanIntervalSeconds>
-                            <daemon>true</daemon>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>stop-jetty</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-          
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.17</version>
-                <configuration>
-                    <!-- Remove the skipTests line below to run TestBench tests -->
-                    <skipTests>true</skipTests>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-          
-		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>com.vaadin</groupId>
-										<artifactId>
-											vaadin-maven-plugin
-										</artifactId>
-										<versionRange>
-											[${project.version},)
-										</versionRange>
-										<goals>
-											<goal>resources</goal>
-											<goal>update-widgetset</goal>
-											<goal>compile</goal>
-											<goal>update-theme</goal>
-											<goal>compile-theme</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-				<plugin>
-					<artifactId>maven-eclipse-plugin</artifactId>
-					<configuration>
-						<wtpversion>2.0</wtpversion>
-						<additionalProjectnatures>
-							<projectnature>com.vaadin.integration.eclipse.widgetsetNature</projectnature>
-						</additionalProjectnatures>
-						<additionalBuildcommands>
-							<buildcommand>com.vaadin.integration.eclipse.widgetsetBuilder</buildcommand>
-							<buildcommand>com.vaadin.integration.eclipse.addonStylesBuilder</buildcommand>
-						</additionalBuildcommands>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+	</repositories>
 </project>

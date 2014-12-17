@@ -1,12 +1,12 @@
 -------------------------------------------------------------------
 Vaadin Maven 2 Application Archetype
 
-Authors: Henri Sara, Matti Tahvonen
+Authors: Henri Sara, Petter Holmström, Matti Tahvonen
 -------------------------------------------------------------------
 DESCRIPTION
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 This Maven archetype generates a simple Vaadin application as a
-Maven 2 project.
+multi-module Maven 2 project.
 
 -------------------------------------------------------------------
 USING THE ARCHETYPE:
