@@ -21,12 +21,6 @@
         <include>README.md</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory></directory>
-      <includes>
-        <include>UNLICENSE</include>
-      </includes>
-    </fileSet>
   </fileSets>
   <modules>
     <module id="${rootArtifactId}-widgetset" dir="__rootArtifactId__-widgetset" name="${rootArtifactId}-widgetset">

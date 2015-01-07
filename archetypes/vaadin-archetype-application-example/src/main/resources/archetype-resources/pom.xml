@@ -9,23 +9,6 @@
 	<version>\${version}</version>
 	<name>\${rootArtifactId}-parent</name>
 
-	<developers>
-		<developer>
-			<name>Petter Holmström</name>
-			<email>petter@vaadin.com</email>
-			<organization>Vaadin</organization>
-			<organizationUrl>https://vaadin.com</organizationUrl>
-		</developer>
-	</developers>
-
-	<licenses>
-		<license>
-			<name>UNLICENSE</name>
-			<url>http://unlicense.org/</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
 	<properties>
 		<vaadin.version>${project.version}</vaadin.version>
 		<vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
