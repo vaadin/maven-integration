@@ -9,10 +9,9 @@ import ${package}.samples.ResetButtonForTextField;
 import ${package}.samples.backend.DataService;
 import ${package}.samples.backend.data.Product;
 
-import com.vaadin.data.Property.ValueChangeEvent;
-import com.vaadin.data.Property.ValueChangeListener;
-import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.event.FieldEvents;
+import com.vaadin.event.SelectionEvent;
+import com.vaadin.event.SelectionEvent.SelectionListener;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FontAwesome;
@@ -21,6 +20,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CssLayout;
+import com.vaadin.ui.Grid.SelectionModel;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
@@ -37,7 +37,7 @@ import com.vaadin.ui.themes.ValoTheme;
 public class SampleCrudView extends CssLayout implements View {
 
     public static final String VIEW_NAME = "Inventory";
-    private ProductTable table;
+    private ProductGrid grid;
     private ProductForm form;
 
     private SampleCrudLogic viewLogic = new SampleCrudLogic(this);
@@ -48,27 +48,28 @@ public class SampleCrudView extends CssLayout implements View {
         addStyleName("crud-view");
         HorizontalLayout topLayout = createTopBar();
 
-        table = new ProductTable();
-        table.addValueChangeListener(new ValueChangeListener() {
+        grid = new ProductGrid();
+        grid.addSelectionListener(new SelectionListener() {
+
             @Override
-            public void valueChange(ValueChangeEvent event) {
-                viewLogic.rowSelected(table.getValue());
+            public void select(SelectionEvent event) {
+                viewLogic.rowSelected(grid.getSelectedRow());
             }
         });
 
         form = new ProductForm(viewLogic);
         form.setCategories(DataService.get().getAllCategories());
 
-        VerticalLayout barAndTableLayout = new VerticalLayout();
-        barAndTableLayout.addComponent(topLayout);
-        barAndTableLayout.addComponent(table);
-        barAndTableLayout.setMargin(true);
-        barAndTableLayout.setSpacing(true);
-        barAndTableLayout.setSizeFull();
-        barAndTableLayout.setExpandRatio(table, 1);
-        barAndTableLayout.setStyleName("crud-main-layout");
+        VerticalLayout barAndGridLayout = new VerticalLayout();
+        barAndGridLayout.addComponent(topLayout);
+        barAndGridLayout.addComponent(grid);
+        barAndGridLayout.setMargin(true);
+        barAndGridLayout.setSpacing(true);
+        barAndGridLayout.setSizeFull();
+        barAndGridLayout.setExpandRatio(grid, 1);
+        barAndGridLayout.setStyleName("crud-main-layout");
 
-        addComponent(barAndTableLayout);
+        addComponent(barAndGridLayout);
         addComponent(form);
 
         viewLogic.init();
@@ -83,7 +84,7 @@ public class SampleCrudView extends CssLayout implements View {
         filter.addTextChangeListener(new FieldEvents.TextChangeListener() {
             @Override
             public void textChange(FieldEvents.TextChangeEvent event) {
-                table.setFilter(event.getText());
+                grid.setFilter(event.getText());
             }
         });
 
@@ -126,11 +127,15 @@ public class SampleCrudView extends CssLayout implements View {
     }
 
     public void clearSelection() {
-        table.setValue(null);
+        grid.getSelectionModel().reset();
     }
 
     public void selectRow(Product row) {
-        table.setValue(row);
+        ((SelectionModel.Single) grid.getSelectionModel()).select(row);
+    }
+
+    public Product getSelectedRow() {
+        return grid.getSelectedRow();
     }
 
     public void editProduct(Product product) {
@@ -144,14 +149,17 @@ public class SampleCrudView extends CssLayout implements View {
         form.editProduct(product);
     }
 
-    public Product getSelectedRow() {
-        return table.getValue();
+    public void showProducts(Collection<Product> products) {
+        grid.setProducts(products);
     }
 
-    public void showProducts(Collection<Product> products) {
-        BeanItemContainer<Product> container = table.getContainerDataSource();
-        container.removeAllItems();
-        container.addAll(products);
+    public void refreshProduct(Product product) {
+        grid.refresh(product);
+        grid.scrollTo(product);
+    }
+
+    public void removeProduct(Product product) {
+        grid.remove(product);
     }
 
 }

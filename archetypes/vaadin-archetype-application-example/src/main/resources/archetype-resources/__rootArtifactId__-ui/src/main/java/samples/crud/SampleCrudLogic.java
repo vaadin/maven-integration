@@ -33,7 +33,7 @@ public class SampleCrudLogic {
             view.setNewProductEnabled(false);
         }
 
-        refreshTable();
+        view.showProducts(DataService.get().getAllProducts());
     }
 
     public void cancelProduct() {
@@ -84,7 +84,7 @@ public class SampleCrudLogic {
                 + product.getId() + ") updated");
         view.clearSelection();
         view.editProduct(null);
-        refreshTable();
+        view.refreshProduct(product);
         setFragmentParameter("");
     }
 
@@ -95,7 +95,7 @@ public class SampleCrudLogic {
 
         view.clearSelection();
         view.editProduct(null);
-        refreshTable();
+        view.removeProduct(product);
         setFragmentParameter("");
     }
 
@@ -106,12 +106,6 @@ public class SampleCrudLogic {
             setFragmentParameter(product.getId() + "");
         }
         view.editProduct(product);
-    }
-
-    private void refreshTable() {
-        Product oldSelection = view.getSelectedRow();
-        view.showProducts(DataService.get().getAllProducts());
-        view.selectRow(oldSelection);
     }
 
     public void newProduct() {
