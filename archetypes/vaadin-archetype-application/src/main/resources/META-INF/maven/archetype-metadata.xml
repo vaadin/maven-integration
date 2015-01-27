@@ -21,49 +21,29 @@
         <include>README.md</include>
       </includes>
     </fileSet>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/main/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/webapp</directory>
+      <includes>
+        <include>**/*.scss</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>src/main/webapp</directory>
+      <includes>
+        <include>**/*.ico</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
   </fileSets>
-  <modules>
-    <module id="${rootArtifactId}-widgetset" dir="__rootArtifactId__-widgetset" name="${rootArtifactId}-widgetset">
-      <fileSets>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-          <directory>src/main/resources</directory>
-          <includes>
-            <include>**/*.xml</include>
-          </includes>
-        </fileSet>
-      </fileSets>
-    </module>
-    <module id="${rootArtifactId}-ui" dir="__rootArtifactId__-ui" name="${rootArtifactId}-ui">
-      <fileSets>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-          <directory>src/main/java</directory>
-          <includes>
-            <include>**/*.java</include>
-          </includes>
-        </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
-          <directory>src/main/webapp</directory>
-          <includes>
-            <include>**/*.scss</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>src/main/webapp</directory>
-          <includes>
-            <include>**/*.ico</include>
-          </includes>
-        </fileSet>
-      </fileSets>
-    </module>
-    <module id="${rootArtifactId}-production" dir="__rootArtifactId__-production" name="${rootArtifactId}-production">
-      <fileSets>
-        <fileSet filtered="true" encoding="UTF-8">
-          <directory>src/main/webapp</directory>
-          <includes>
-            <include>**/*.xml</include>
-          </includes>
-        </fileSet>
-      </fileSets>
-    </module>
-  </modules>
 </archetype-descriptor>

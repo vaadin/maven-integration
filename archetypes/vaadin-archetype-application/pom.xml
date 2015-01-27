@@ -4,13 +4,14 @@
 
   <groupId>com.vaadin</groupId>
   <artifactId>vaadin-archetype-application</artifactId>
-  <version>7.3-SNAPSHOT</version>
+  <version>7.4-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>vaadin-archetype-application</name>
   <url>http://vaadin.com</url>
   <description>
-      This archetype generates a sample Vaadin application as a multi-module Maven project.
+      This archetype generates a sample Vaadin application as a single-module Maven project.
+      This archetype is primarily meant for simple applications, quick tests and demos.
   </description>
   <scm>
     <url>https://github.com/vaadin/maven-integration</url>
