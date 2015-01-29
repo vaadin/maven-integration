@@ -3,7 +3,9 @@
 #set( $symbol_escape = '\' )
 @import "${themeName}.scss";
 @import "addons.scss";
-@import "shame.scss";
+
+// This should be in the Valo theme as a shorthand
+${symbol_dollar}v-layout-margin: ${symbol_dollar}v-layout-margin-top ${symbol_dollar}v-layout-margin-right ${symbol_dollar}v-layout-margin-bottom ${symbol_dollar}v-layout-margin-left !default;
 
 // This file prefixes all rules with the theme name to avoid causing conflicts with other themes.
 // The actual styles should be defined in ${themeName}.scss
@@ -11,7 +13,4 @@
 .${themeName} {
   @include addons;
   @include ${themeName};
-
-  // TODO unwanted fixes and workarounds
-  @include shame;
 }
