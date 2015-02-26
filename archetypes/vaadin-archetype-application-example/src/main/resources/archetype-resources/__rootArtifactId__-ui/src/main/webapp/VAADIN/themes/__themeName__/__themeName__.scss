@@ -133,7 +133,6 @@ ${symbol_dollar}v-layout-spacing-horizontal: round(${symbol_dollar}v-unit-size /
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
     z-index: 100;
     width: round(${symbol_dollar}v-unit-size * 9);
     height: 100%;
@@ -174,6 +173,10 @@ ${symbol_dollar}v-layout-spacing-horizontal: round(${symbol_dollar}v-unit-size /
       padding-bottom: ${symbol_dollar}v-layout-spacing-vertical;
     }
 
+  }
+  
+  .product-form {
+    right: 0;
     @include transition(all 300ms);
     @include transform(translatex(100%));
   }
