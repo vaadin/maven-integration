@@ -56,36 +56,45 @@
 	</pluginRepositories>
 
 	<packaging>war</packaging>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-bom</artifactId>
+				<version>\${symbol_dollar}{vaadin.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 
 		<!-- Vaadin dependencies -->
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-server</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client-compiled</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 		<!-- Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory).
 			For widgetset compilation, vaadin-client-compiler is automatically added
 			on the compilation classpath by vaadin-maven-plugin so normally there is
 			no need for an explicit dependency. -->
 		<!-- <dependency> <groupId>com.vaadin</groupId> <artifactId>vaadin-client-compiler</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version> <scope>provided</scope> </dependency> -->
+			<scope>provided</scope> </dependency> -->
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
-			<version>\${symbol_dollar}{vaadin.version}</version>
 		</dependency>
 
 		<!-- Liferay dependencies -->
