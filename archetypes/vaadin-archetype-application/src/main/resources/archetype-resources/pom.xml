@@ -133,6 +133,7 @@
 				<executions>
 					<execution>
 						<goals>
+							<goal>update-theme</goal>
 							<goal>update-widgetset</goal>
 							<goal>compile</goal>
 							<!-- disabled by default to use on-the-fly theme compilation -->
