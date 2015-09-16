@@ -17,16 +17,12 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-client</artifactId>
-            <!-- TODO this should have scope provided once http://dev.vaadin.com/ticket/14788 
-                is resolved -->
-            <!-- <scope>provided</scope> -->
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-client-compiler</artifactId>
-            <!-- TODO this should have scope provided once http://dev.vaadin.com/ticket/14788 
-                is resolved -->
-            <!-- <scope>provided</scope> -->
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
