@@ -40,7 +40,10 @@
                     <webappDirectory>${symbol_dollar}{basedir}/target/classes/VAADIN/widgetsets</webappDirectory>
                     <draftCompile>true</draftCompile>
                     <compileReport>false</compileReport>
-                    <style>DETAILED</style>
+                    <!-- Change to PRETTY (or possibly DETAILED) to get
+                    unobfuscated client side stack traces. A better approach
+                    for debugging is to use Super Dev Mode -->
+                    <style>OBF</style> 
                     <strict>true</strict>
                 </configuration>
                 <executions>
