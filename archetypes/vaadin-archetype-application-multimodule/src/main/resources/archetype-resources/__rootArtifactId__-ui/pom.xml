@@ -85,7 +85,6 @@
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${symbol_dollar}{vaadin.plugin.version}</version>
                 <configuration>
                     <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
                     <webappDirectory>${symbol_dollar}{basedir}/target/classes/VAADIN/widgetsets</webappDirectory>
