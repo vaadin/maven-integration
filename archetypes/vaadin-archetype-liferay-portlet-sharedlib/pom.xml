@@ -10,7 +10,7 @@
 
 	<groupId>com.vaadin</groupId>
 	<artifactId>vaadin-archetype-liferay-portlet-sharedlib</artifactId>
-	<version>7.2.0-SNAPSHOT</version>
+	<version>7.6-SNAPSHOT</version>
 
 	<packaging>maven-archetype</packaging>
 	<developers>

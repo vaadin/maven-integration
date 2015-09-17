@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.vaadin</groupId>
     <artifactId>vaadin-archetype-liferay-portlet</artifactId>
-    <version>7.3-SNAPSHOT</version>
+    <version>7.6-SNAPSHOT</version>
 
     <packaging>maven-archetype</packaging>
     <organization>

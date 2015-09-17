@@ -12,7 +12,7 @@
   <artifactId>vaadin-archetype-widget</artifactId>
   <packaging>maven-archetype</packaging>
   <name>Vaadin Widget Project Archetype</name>
-  <version>7.3-SNAPSHOT</version>
+  <version>7.6-SNAPSHOT</version>
   <url>http://vaadin.com</url>
   <inceptionYear>2009</inceptionYear>
   <description>
