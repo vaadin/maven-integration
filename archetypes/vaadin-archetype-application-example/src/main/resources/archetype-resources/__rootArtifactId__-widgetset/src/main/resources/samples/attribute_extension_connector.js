@@ -9,7 +9,11 @@ window.${package.replace(".", "_")}_samples_AttributeExtension = function() {
             var attributes = this.getState().attributes;
             for (var attr in attributes) {
                 if (attributes.hasOwnProperty(attr)) {
-                    element.setAttribute(attr, attributes[attr]);
+                        try {
+                                element.setAttribute(attr, attributes[attr]);
+                        } catch (e) {
+                                // IE8 does not support type='number' - just ignore it
+                        }
                 }
             }
         }
