@@ -16,7 +16,7 @@
   <url>http://vaadin.com</url>
   <inceptionYear>2009</inceptionYear>
   <description>
-      This archetype generates a Vaadin widget project for Vaadin 7.x and a test application for Vaadin 7.1.
+      This archetype generates a Vaadin 7 widget project and a related demo application.
   </description>
   <developers>
     <developer>

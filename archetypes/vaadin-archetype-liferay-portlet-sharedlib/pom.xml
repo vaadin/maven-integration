@@ -6,12 +6,21 @@
 		<artifactId>vaadin-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<name>Vaadin 7.2 Liferay 6.2-GA2 archetype</name>
+	<name>Vaadin 7 Liferay 6 archetype</name>
 
 	<groupId>com.vaadin</groupId>
 	<artifactId>vaadin-archetype-liferay-portlet-sharedlib</artifactId>
 	<version>7.6-SNAPSHOT</version>
 
+	<description>This archetype generates a Vaadin 7 Liferay portlet 
+        for portals with Vaadin jars and static resources (widgetset, theme, etc.)
+        installed portal-wide.
+
+        Liferay-specific properties should be defined in a Maven profile
+        and you should activate this profile when performing builds of a
+        project based on this archetype.
+        Please see https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en
+	</description>
 	<packaging>maven-archetype</packaging>
 	<developers>
 		<developer>
@@ -52,9 +61,6 @@
 		</extensions>
 	</build>
 
-	<description>This archetype creates a Liferay portlet.
-The scope of Vaadin dependencies is set to provided, as it is assumed that the portal server has Vaadin installed. Liferay-specific properties should be defined in a maven profile and you should activate this profile when performing builds of a project based on this archetype. Please see https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/developing-plugins-using-maven-liferay-portal-6-2-dev-guide-02-en
-	</description>
 	<organization>
 		<name>Vaadin Ltd</name>
 		<url>http://vaadin.com</url>

@@ -20,7 +20,7 @@
     <url>http://vaadin.com</url>
     <inceptionYear>2014</inceptionYear>
     <description>
-        This archetype creates a self-contained Vaadin Liferay portlet.
+        This archetype generates a self-contained Vaadin 7 Liferay portlet.
         It packages all Vaadin static resources (widgetset, theme etc.)
         and doesn't make use of portal-provided resources.
 

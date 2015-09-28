@@ -15,7 +15,8 @@
   <name>vaadin-archetype-application-multimodule</name>
   <url>http://vaadin.com</url>
   <description>
-      This archetype generates a sample Vaadin application as a multi-module Maven project.
+      This archetype generates the skeleton for a multi-module Vaadin application.
+      For a full example project, see vaadin-archetype-application-example.
   </description>
   <scm>
     <url>https://github.com/vaadin/maven-integration</url>

@@ -16,7 +16,7 @@
     <url>http://vaadin.com</url>
     <inceptionYear>2013</inceptionYear>
     <description>
-      Generates a simple Vaadin application using TouchKit.
+      This archetype generates a simple Vaadin 7 TouchKit application.
     </description>
 
     <developers>
