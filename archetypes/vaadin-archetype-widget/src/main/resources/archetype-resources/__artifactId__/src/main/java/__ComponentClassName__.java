@@ -38,7 +38,7 @@ public class ${ComponentClassName} extends com.vaadin.ui.AbstractComponent {
 
 	// We must override getState() to cast the state to ${ComponentClassName}State
 	@Override
-	public ${ComponentClassName}State getState() {
+	protected ${ComponentClassName}State getState() {
 		return (${ComponentClassName}State) super.getState();
 	}
 }

@@ -47,14 +47,8 @@ public class ${ComponentClassName}Connector extends AbstractComponentConnector {
 
 	}
 
-	// We must implement createWidget() to create correct type of widget
-	@Override
-	protected Widget createWidget() {
-		return GWT.create(${ComponentClassName}Widget.class);
-	}
-
-	
-	// We must implement getWidget() to cast to correct type
+	// We must implement getWidget() to cast to correct type 
+	// (this will automatically create the correct widget type)
 	@Override
 	public ${ComponentClassName}Widget getWidget() {
 		return (${ComponentClassName}Widget) super.getWidget();
