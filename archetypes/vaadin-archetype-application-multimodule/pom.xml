@@ -24,6 +24,10 @@
     <developerConnection>ssh://user@dev.vaadin.com:29418/maven-integration</developerConnection>
   </scm>
 
+  <properties>
+    <vaadin.prerelease>false</vaadin.prerelease>
+  </properties>
+
   <build>
     <extensions>
       <extension>

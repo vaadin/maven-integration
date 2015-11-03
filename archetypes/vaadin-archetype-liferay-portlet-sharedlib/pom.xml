@@ -41,7 +41,11 @@
 		</license>
 	</licenses>
 
-	<build>
+    <properties>
+        <vaadin.prerelease>false</vaadin.prerelease>
+    </properties>
+
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

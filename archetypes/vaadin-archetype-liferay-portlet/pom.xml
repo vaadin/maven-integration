@@ -59,6 +59,10 @@
         </license>
     </licenses>
 
+    <properties>
+        <vaadin.prerelease>false</vaadin.prerelease>
+    </properties>
+
     <build>
         <extensions>
             <extension>

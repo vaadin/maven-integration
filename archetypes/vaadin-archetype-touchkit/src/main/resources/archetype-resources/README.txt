@@ -53,3 +53,9 @@ $ mvn jetty:run
 Finally open your browser and open the url
 http://localhost:8080/?gwt.codesvr=127.0.0.1:9997
 
+Using Vaadin pre-releases
+-------------------------
+
+If Vaadin pre-releases are not enabled by default, use the Maven parameter
+"-P vaadin-prerelease" or change the activation default value of the profile in pom.xml .
+

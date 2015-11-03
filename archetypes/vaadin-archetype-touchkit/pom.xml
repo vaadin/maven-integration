@@ -41,6 +41,10 @@
         </license>
     </licenses>
 
+    <properties>
+        <vaadin.prerelease>false</vaadin.prerelease>
+    </properties>
+
     <repositories>
         <repository>
             <id>vaadin-snapshots</id>

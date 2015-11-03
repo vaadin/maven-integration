@@ -2,3 +2,4 @@
 /archetypes/*/.settings
 /archetypes/*/.project
 /archetypes/*/target
+/target
