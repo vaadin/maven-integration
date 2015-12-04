@@ -13,6 +13,7 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
@@ -26,18 +27,24 @@ public class ${uiName} extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
-        layout.setMargin(true);
-        setContent(layout);
+        
+        final TextField name = new TextField();
+        name.setCaption("Type your name here:");
 
         Button button = new Button("Click Me");
         button.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(ClickEvent event) {
-                layout.addComponent(new Label("Thank you for clicking"));
+                layout.addComponent(new Label("Thanks " + name.getValue() 
+                        + ", it works!"));
             }
         });
-        layout.addComponent(button);
-
+        
+        layout.addComponents(name, button);
+        layout.setMargin(true);
+        layout.setSpacing(true);
+        
+        setContent(layout);
     }
 
     @WebServlet(urlPatterns = "/*", name = "${uiName}Servlet", asyncSupported = true)
