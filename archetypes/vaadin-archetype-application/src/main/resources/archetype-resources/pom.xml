@@ -13,8 +13,6 @@
 		<vaadin.version>${project.version}</vaadin.version>
 		<vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
 		<jetty.plugin.version>9.2.3.v20140905</jetty.plugin.version>
-		<project.source.version>1.7</project.source.version>
-		<project.target.version>1.7</project.target.version>
 		<project.encoding>UTF-8</project.encoding>
 	</properties>
 
@@ -92,11 +90,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
+				<version>3.3</version>
 				<configuration>
 					<encoding>\${symbol_dollar}{project.encoding}</encoding>
-					<source>\${symbol_dollar}{project.source.version}</source>
-					<target>\${symbol_dollar}{project.target.version}</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
