@@ -101,6 +101,7 @@
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client-compiler</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
@@ -147,10 +148,6 @@
 		        	<packagingExcludes>
 						**/VAADIN/gwt-unitCache/**,
 						**/VAADIN/widgetsets/WEB-INF/**,
-						**/WEB-INF/lib/servlet-api-*.jar,
-						**/WEB-INF/lib/vaadin-client-*.jar,
-						**/WEB-INF/lib/jetty-*.jar,
-						**/WEB-INF/lib/ant-*.jar,
 						**/WEB-INF/classes/gwt-unitCache/**,
 						**/WEB-INF/classes/themes/**,
 						**/WEB-INF/classes/widgetsets/**
