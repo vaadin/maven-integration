@@ -11,10 +11,8 @@ Workflow
 ========
 
 To compile the entire project, run "mvn install".
-To run the application, run "mvn jetty:run" and open http://localhost:8080/ .
 
-To develop the theme, simply update the relevant theme files and reload the application.
-Pre-compiling a theme eliminates automatic theme updates at runtime - see below for more information.
+To run the application, run "mvn jetty:run" and open http://localhost:8080/ .
 
 Debugging client side code
   - run "mvn vaadin:run-codeserver" on a separate console while the application is running
@@ -22,23 +20,25 @@ Debugging client side code
 
 To produce a deployable production mode WAR:
 - change productionMode to true in the servlet class configuration (nested in the UI class)
-- run "mvn clean vaadin:compile-theme package"
-  - See below for more information. Running "mvn clean" removes the pre-compiled theme.
-- test with "mvn jetty:run-war
+- run "mvn clean package"
+- test the war file with "mvn jetty:run-war"
 
-Using a precompiled theme
+Developing a theme using the runtime compiler
 -------------------------
 
-When developing the application, Vaadin can compile the theme on the fly when needed,
-or the theme can be precompiled to speed up page loads.
+When developing the theme, Vaadin can be configured to compile the SASS based
+theme at runtime in the server. This way you can just modify the scss files in
+your IDE and reload the browser to see changes.
 
-To precompile the theme run "mvn vaadin:compile-theme". Note, though, that once
-the theme has been precompiled, any theme changes will not be visible until the
-next theme compilation or running the "mvn clean" target.
+To use on the runtime compilation, open pom.xml and comment out the compile-theme 
+goal from vaadin-maven-plugin configuration. To remove a possibly existing 
+pre-compiled theme, run "mvn clean package" once.
 
-When developing the theme, running the application in the "run" mode (rather than
-in "debug") in the IDE can speed up consecutive on-the-fly theme compilations
+When using the runtime compiler, running the application in the "run" mode 
+(rather than in "debug" mode) can speed up consecutive theme compilations
 significantly.
+
+It is highly recommended to disable runtime compilation for production WAR files.
 
 Using Vaadin pre-releases
 -------------------------
