@@ -1,0 +1,12 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+@import "addons.scss";
+@import "${themeName}.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in ${themeName}.scss */
+.${themeName} {
+  @include addons;
+  @include ${themeName};
+}
