@@ -178,49 +178,17 @@
 
         <pluginManagement>
             <plugins>
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>com.vaadin</groupId>
-                                        <artifactId>
-                                            vaadin-maven-plugin
-                                        </artifactId>
-                                        <versionRange>
-                                            [7.0-SNAPSHOT,)
-                                        </versionRange>
-                                        <goals>
-                                            <goal>
-                                                update-widgetset
-                                            </goal>
-                                            <goal>resources</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
                 <plugin>
                     <artifactId>maven-eclipse-plugin</artifactId>
                     <configuration>
                         <wtpversion>2.0</wtpversion>
                         <additionalProjectnatures>
                             <projectnature>com.vaadin.integration.eclipse.widgetsetNature</projectnature>
-                            </additionalProjectnatures>
-                            <additionalBuildcommands>
-                                <buildcommand>com.vaadin.integration.eclipse.widgetsetBuilder</buildcommand>
-                                <buildcommand>com.vaadin.integration.eclipse.addonStylesBuilder</buildcommand>
-                            </additionalBuildcommands>
+                        </additionalProjectnatures>
+                        <additionalBuildcommands>
+                            <buildcommand>com.vaadin.integration.eclipse.widgetsetBuilder</buildcommand>
+                            <buildcommand>com.vaadin.integration.eclipse.addonStylesBuilder</buildcommand>
+                        </additionalBuildcommands>
                     </configuration>
                 </plugin>
             </plugins>
