@@ -10,14 +10,14 @@
     </parent>
 
     <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-jee-archetype</artifactId>
+    <artifactId>vaadin-archetype-java-ee-application§</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
-    <name>vaadin-jee-archetype</name>
+    <name>vaadin-archetype-java-ee-application</name>
     <url>http://vaadin.com</url>
     <description>
-        This archetype generates a sample JEE Vaadin application as a  Maven project.
+        This archetype generates a sample Java EE Vaadin application as a  Maven project.
     </description>
     <scm>
       <url>https://github.com/vaadin/maven-integration</url>
