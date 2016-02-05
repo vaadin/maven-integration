@@ -10,11 +10,11 @@
 
     <properties>
         <vaadin.version>7.5.6</vaadin.version>
-        <vaadin-plugin.version>${symbol_dollar}{vaadin.version}</vaadin-plugin.version>
-        <vaadin-cdi.version>1.0.3</vaadin-cdi.version>
+        <vaadin.plugin.version>${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
+        <vaadin.cdi.version>1.0.3</vaadin.cdi.version>
         <javaee.version>7.0</javaee.version>
         <slf4j.version>1.7.12</slf4j.version>
-        <wildfly-plugin.version>1.0.2.Final</wildfly-plugin.version>
+        <wildfly.plugin.version>1.0.2.Final</wildfly.plugin.version>
         <deltaspike.version>1.5.0</deltaspike.version>
         <project.build.encoding>UTF-8</project.build.encoding>
         <project.build.source>1.8</project.build.source>
@@ -33,7 +33,7 @@
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-cdi</artifactId>
-                <version>${symbol_dollar}{vaadin-cdi.version}</version>
+                <version>${symbol_dollar}{vaadin.cdi.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax</groupId>
@@ -92,7 +92,7 @@
                 <plugin>
                     <groupId>com.vaadin</groupId>
                     <artifactId>vaadin-maven-plugin</artifactId>
-                    <version>${symbol_dollar}{vaadin-plugin.version}</version>
+                    <version>${symbol_dollar}{vaadin.plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -127,7 +127,7 @@
                 <plugin>
                     <groupId>org.wildfly.plugins</groupId>
                     <artifactId>wildfly-maven-plugin</artifactId>
-                    <version>${symbol_dollar}{wildfly-plugin.version}</version>
+                    <version>${symbol_dollar}{wildfly.plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
