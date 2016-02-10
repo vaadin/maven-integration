@@ -103,9 +103,8 @@
                     <execution>
                         <goals>
                             <goal>update-theme</goal>
-                            <!-- disabled by default to use on-the-fly theme 
-                                compilation -->
-                            <!-- <goal>compile-theme</goal> -->
+                            <!-- Comment out compile-theme goal to use on-the-fly theme compilation -->
+                            <goal>compile-theme</goal>
                         </goals>
                     </execution>
                 </executions>
