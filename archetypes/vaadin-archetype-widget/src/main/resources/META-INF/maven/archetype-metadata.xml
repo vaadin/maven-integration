@@ -19,28 +19,28 @@
 		</fileSet>
 
 		<fileSet filtered="true" encoding="UTF-8">
-			<directory>__artifactId__</directory>
+			<directory>__artifactId__-addon</directory>
 			<includes>
 				<include>pom.xml</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>__artifactId__/src/main/java</directory>
+			<directory>__artifactId__-addon/src/main/java</directory>
 			<includes>
 				<include>**/*.java</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>__artifactId__/src/test/java</directory>
+			<directory>__artifactId__-addon/src/test/java</directory>
 			<includes>
 				<include>**/*.java</include>
 			</includes>
 		</fileSet>
 
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
-			<directory>__artifactId__/src/main/resources</directory>
+			<directory>__artifactId__-addon/src/main/resources</directory>
 			<includes>
 				<include>**/*.css</include>
 				<include>**/*.xml</include>
@@ -48,7 +48,7 @@
 		</fileSet>
 
 		<fileSet filtered="false" encoding="UTF-8">
-			<directory>__artifactId__</directory>
+			<directory>__artifactId__-addon</directory>
 			<includes>
 				<include>assembly/*</include>
 			</includes>

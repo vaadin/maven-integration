@@ -104,7 +104,7 @@
         <includes>
           <include>archetype-resources/pom.xml</include>
           <include>archetype-resources/__artifactId__-demo/pom.xml</include>
-          <include>archetype-resources/__artifactId__/pom.xml</include>
+          <include>archetype-resources/__artifactId__-addon/pom.xml</include>
         </includes>
       </resource>
       <resource>
@@ -113,7 +113,7 @@
         <excludes>
           <exclude>archetype-resources/pom.xml</exclude>
           <exclude>archetype-resources/__artifactId__-demo/pom.xml</exclude>
-          <exclude>archetype-resources/__artifactId__/pom.xml</exclude>
+          <exclude>archetype-resources/__artifactId__-addon/pom.xml</exclude>
         </excludes>
       </resource>
     </resources>
