@@ -30,7 +30,7 @@ When developing the theme, Vaadin can be configured to compile the SASS based
 theme at runtime in the server. This way you can just modify the scss files in
 your IDE and reload the browser to see changes.
 
-To use on the runtime compilation, open pom.xml and comment out the compile-theme 
+To use the runtime compilation, open pom.xml and comment out the compile-theme 
 goal from vaadin-maven-plugin configuration. To remove a possibly existing 
 pre-compiled theme, run "mvn clean package" once.
 
