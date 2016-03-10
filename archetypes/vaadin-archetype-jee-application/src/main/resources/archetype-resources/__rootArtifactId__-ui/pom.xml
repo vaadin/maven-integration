@@ -1,6 +1,7 @@
 #set( $symbol_dollar = '$' )
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>${rootArtifactId}</artifactId>
         <groupId>${groupId}</groupId>
@@ -13,6 +14,19 @@
     <packaging>war</packaging>
 
     <dependencies>
+        <!-- Application Modules -->
+        <dependency>
+            <groupId>${symbol_dollar}{project.groupId}</groupId>
+            <artifactId>${rootArtifactId}-widgetset</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${symbol_dollar}{project.groupId}</groupId>
+            <artifactId>${rootArtifactId}-backend</artifactId>
+            <version>${symbol_dollar}{project.version}</version>
+        </dependency>
+
+        <!-- Vaadin -->
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-server</artifactId>
@@ -29,53 +43,31 @@
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-themes</artifactId>
         </dependency>
-        <dependency>
-            <groupId>${symbol_dollar}{project.groupId}</groupId>
-            <artifactId>${rootArtifactId}-widgetset</artifactId>
-            <version>${symbol_dollar}{project.version}</version>
-        </dependency>
+
+        <!-- Java EE -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
-        <!-- DeltaSpike Core -->
-        <dependency>
-            <groupId>org.apache.deltaspike.core</groupId>
-            <artifactId>deltaspike-core-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.deltaspike.core</groupId>
-            <artifactId>deltaspike-core-impl</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- DeltaSpike for JPA repositories -->
-        <dependency>
-            <groupId>org.apache.deltaspike.modules</groupId>
-            <artifactId>deltaspike-data-module-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.deltaspike.modules</groupId>
-            <artifactId>deltaspike-data-module-impl</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- Wildfly includes SLF4J. If you are not going to deploy to Wildfly, you have to add additional dependencies
-             or use another logging API. -->
+        <!-- SLF4J -->
+        #if( $targetAppServer == 'wildfly' )
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <scope>provided</scope>
         </dependency>
-
-        <!-- Use an embedded H2 database for testing -->
+        #else
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.182</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+        </dependency>
+        #end
     </dependencies>
 
     <build>
@@ -92,31 +84,111 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+            #if( $targetAppServer == 'wildfly' )
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+            </plugin>
+            #elseif( $targetAppServer == 'glassfish' )
+            <plugin>
+                <groupId>org.glassfish.embedded</groupId>
+                <artifactId>maven-embedded-glassfish-plugin</artifactId>
+                <configuration>
+                    <port>8080</port>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <phase>none</phase>
+                        <configuration>
+                            <app>target/${symbol_dollar}{project.build.finalName}.${symbol_dollar}{project.packaging}</app>
+                            <contextRoot>/${symbol_dollar}{project.artifactId}</contextRoot>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.glassfish.main.common</groupId>
+                        <artifactId>simple-glassfish-api</artifactId>
+                        <version>${symbol_dollar}{glassfish.plugin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.glassfish.main.extras</groupId>
+                        <artifactId>glassfish-embedded-all</artifactId>
+                        <version>${symbol_dollar}{glassfish.plugin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            #end
         </plugins>
     </build>
 
-
-      <profiles>
+    <profiles>
         <profile>
-          <!-- Vaadin pre-release repositories -->
-          <id>vaadin-prerelease</id>
-          <activation>
-            <activeByDefault>${vaadin.prerelease}</activeByDefault>
-          </activation>
-
-          <repositories>
-            <repository>
-              <id>vaadin-prereleases</id>
-              <url>http://maven.vaadin.com/vaadin-prereleases</url>
-            </repository>
-          </repositories>
-          <pluginRepositories>
-            <pluginRepository>
-              <id>vaadin-prereleases</id>
-              <url>http://maven.vaadin.com/vaadin-prereleases</url>
-            </pluginRepository>
-          </pluginRepositories>
+            <id>production</id>
+            <build>
+                <plugins>
+                    <!-- Compile the SCSS theme to CSS -->
+                    <plugin>
+                        <groupId>com.vaadin</groupId>
+                        <artifactId>vaadin-maven-plugin</artifactId>
+                        <configuration>
+                            <theme>${themeName}</theme>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>compile-theme</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <configuration>
+                            <failOnMissingWebXml>false</failOnMissingWebXml>
+                            <webResources>
+                                <resource>
+                                    <directory>src/main/webapp-production</directory>
+                                </resource>
+                            </webResources>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
-      </profiles>
+        <profile>
+            <!-- Vaadin pre-release repositories -->
+            <id>vaadin-prerelease</id>
+            <activation>
+                <activeByDefault>${vaadin.prerelease}</activeByDefault>
+            </activation>
+
+            <repositories>
+                <repository>
+                    <id>vaadin-prereleases</id>
+                    <url>http://maven.vaadin.com/vaadin-prereleases</url>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>vaadin-prereleases</id>
+                    <url>http://maven.vaadin.com/vaadin-prereleases</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
 
 </project>

@@ -1,20 +1,21 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.entity.common;
+package ${package}.backend.entity.common;
+
+import java.io.Serializable;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
-import java.io.Serializable;
 
 /**
  * Base class for entities.
  */
 @MappedSuperclass
-public abstract class BaseEntity implements Serializable {
+public abstract class BaseEntity implements Serializable, Cloneable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -92,5 +93,10 @@ public abstract class BaseEntity implements Serializable {
     public String toString() {
         return String.format("%s@%x(id: %d, version: %d)", getClass().getName(), System.identityHashCode(this),
                 id, version);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
