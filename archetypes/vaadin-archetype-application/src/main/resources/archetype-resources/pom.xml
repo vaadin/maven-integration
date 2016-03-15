@@ -110,9 +110,6 @@
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
 				<version>\${symbol_dollar}{vaadin.plugin.version}</version>
-				<configuration>
-					<webappDirectory>\${symbol_dollar}{project.build.outputDirectory}/VAADIN/widgetsets</webappDirectory>
-				</configuration>
 				<executions>
 					<execution>
 						<goals>
