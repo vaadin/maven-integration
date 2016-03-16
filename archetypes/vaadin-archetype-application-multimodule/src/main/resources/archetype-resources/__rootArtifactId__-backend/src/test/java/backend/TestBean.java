@@ -5,20 +5,20 @@ package ${package}.backend;
 
 public class TestBean {
 
-	private static int counter = 0;
+    private static int counter = 0;
 
-	private final int id;
+    private final int id;
 
-	public TestBean() {
-		id = ++counter;
-	}
+    public TestBean() {
+        id = ++counter;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	@Override
-	public String toString() {
-		return "{" + getClass().getSimpleName() + ":id=" + getId() + "}";
-	}
+    @Override
+    public String toString() {
+        return "{" + getClass().getSimpleName() + ":id=" + getId() + "}";
+    }
 }

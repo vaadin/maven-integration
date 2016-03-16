@@ -14,15 +14,15 @@ import com.vaadin.shared.ui.Connect;
 @Connect(MyComponent.class)
 public class MyComponentConnector extends AbstractComponentConnector {
 
-        @Override
-        public VLabel getWidget() {
-                return (VLabel) super.getWidget();
-        }
+    @Override
+    public VLabel getWidget() {
+        return (VLabel) super.getWidget();
+    }
 
-        @Override
-        protected void init() {
-                super.init();
+    @Override
+    protected void init() {
+        super.init();
 
-                getWidget().setText("This is a dummy component.");
-        }
+        getWidget().setText("This is a dummy component.");
+    }
 }

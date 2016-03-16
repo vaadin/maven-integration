@@ -17,20 +17,20 @@ import java.util.Set;
  */
 public class CrudService<T> {
 
-	private Set<T> storage = new LinkedHashSet<T>();
+    private Set<T> storage = new LinkedHashSet<T>();
 
-	public void save(T entity) {
-		if (storage.contains(entity)) {
-			return;
-		}
-		storage.add(entity);
-	}
+    public void save(T entity) {
+        if (storage.contains(entity)) {
+            return;
+        }
+        storage.add(entity);
+    }
 
-	public List<T> findAll() {
-		return new ArrayList<T>(storage);
-	}
+    public List<T> findAll() {
+        return new ArrayList<T>(storage);
+    }
 
-	public void delete(T entity) {
-		storage.remove(entity);
-	}
+    public void delete(T entity) {
+        storage.remove(entity);
+    }
 }

@@ -6,7 +6,7 @@ import com.vaadin.shared.communication.ClientRpc;
 // For sending information about the changes to component state, use State instead
 public interface ${ComponentClassName}ClientRpc extends ClientRpc {
 
-	// Example API: Fire up alert box in client
-	public void alert(String message);
+    // Example API: Fire up alert box in client
+    public void alert(String message);
 
 }

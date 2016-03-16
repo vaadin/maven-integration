@@ -26,7 +26,6 @@ public class ${uiName} extends UI {
     private CrudService<Person> service = new CrudService<>();
     private BeanItemContainer<Person> dataSource = new BeanItemContainer<Person>(Person.class);
 
-    
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
@@ -35,16 +34,16 @@ public class ${uiName} extends UI {
 
         Button button = new Button("Click Me");
         button.addClickListener(e -> {
-                service.save(new Person(name.getValue()));
-                dataSource.removeAllItems();
-                dataSource.addAll(service.findAll());
+            service.save(new Person(name.getValue()));
+            dataSource.removeAllItems();
+            dataSource.addAll(service.findAll());
         });
 
         Grid grid = new Grid(dataSource);
         grid.setSizeFull();
 
         // This is a component from the ${rootArtifactId}-addon module
-        // layout.addComponent(new MyComponent());
+        //layout.addComponent(new MyComponent());
         layout.addComponents(name, button, grid);
         layout.setSizeFull();
         layout.setMargin(true);

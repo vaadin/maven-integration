@@ -37,7 +37,5 @@ public class DemoUI extends UI
         layout.addComponent(component);
         layout.setComponentAlignment(component, Alignment.MIDDLE_CENTER);
         setContent(layout);
-
     }
-
 }

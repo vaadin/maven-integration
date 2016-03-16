@@ -20,54 +20,53 @@ import com.vaadin.shared.ui.Connect;
 @Connect(${ComponentClassName}.class)
 public class ${ComponentClassName}Connector extends AbstractComponentConnector {
 
-	// ServerRpc is used to send events to server. Communication implementation
-	// is automatically created here
-	${ComponentClassName}ServerRpc rpc = RpcProxy.create(${ComponentClassName}ServerRpc.class, this);
+    // ServerRpc is used to send events to server. Communication implementation
+    // is automatically created here
+    ${ComponentClassName}ServerRpc rpc = RpcProxy.create(${ComponentClassName}ServerRpc.class, this);
 
-	public ${ComponentClassName}Connector() {
-		
-		// To receive RPC events from server, we register ClientRpc implementation 
-		registerRpc(${ComponentClassName}ClientRpc.class, new ${ComponentClassName}ClientRpc() {
-			public void alert(String message) {
-				Window.alert(message);
-			}
-		});
+    public ${ComponentClassName}Connector() {
+        
+        // To receive RPC events from server, we register ClientRpc implementation 
+        registerRpc(${ComponentClassName}ClientRpc.class, new ${ComponentClassName}ClientRpc() {
+            public void alert(String message) {
+                Window.alert(message);
+            }
+        });
 
-		// We choose listed for mouse clicks for the widget
-		getWidget().addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
-				final MouseEventDetails mouseDetails = MouseEventDetailsBuilder
-						.buildMouseEventDetails(event.getNativeEvent(),
-								getWidget().getElement());
-				
-				// When the widget is clicked, the event is sent to server with ServerRpc
-				rpc.clicked(mouseDetails);
-			}
-		});
+        // We choose listed for mouse clicks for the widget
+        getWidget().addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                final MouseEventDetails mouseDetails = MouseEventDetailsBuilder
+                        .buildMouseEventDetails(event.getNativeEvent(),
+                                getWidget().getElement());
+                
+                // When the widget is clicked, the event is sent to server with ServerRpc
+                rpc.clicked(mouseDetails);
+            }
+        });
 
-	}
+    }
 
-	// We must implement getWidget() to cast to correct type 
-	// (this will automatically create the correct widget type)
-	@Override
-	public ${ComponentClassName}Widget getWidget() {
-		return (${ComponentClassName}Widget) super.getWidget();
-	}
+    // We must implement getWidget() to cast to correct type 
+    // (this will automatically create the correct widget type)
+    @Override
+    public ${ComponentClassName}Widget getWidget() {
+        return (${ComponentClassName}Widget) super.getWidget();
+    }
 
-	// We must implement getState() to cast to correct type
-	@Override
-	public ${ComponentClassName}State getState() {
-		return (${ComponentClassName}State) super.getState();
-	}
+    // We must implement getState() to cast to correct type
+    @Override
+    public ${ComponentClassName}State getState() {
+        return (${ComponentClassName}State) super.getState();
+    }
 
-	// Whenever the state changes in the server-side, this method is called
-	@Override
-	public void onStateChanged(StateChangeEvent stateChangeEvent) {
-		super.onStateChanged(stateChangeEvent);
+    // Whenever the state changes in the server-side, this method is called
+    @Override
+    public void onStateChanged(StateChangeEvent stateChangeEvent) {
+        super.onStateChanged(stateChangeEvent);
 
-		// State is directly readable in the client after it is set in server
-		final String text = getState().text;
-		getWidget().setText(text);
-	}
-
+        // State is directly readable in the client after it is set in server
+        final String text = getState().text;
+        getWidget().setText(text);
+    }
 }
