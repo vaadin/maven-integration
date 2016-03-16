@@ -127,31 +127,12 @@
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.4.1</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<!-- Clean-up widgetset required for "inplace" compilation -->
-							<directory>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets</directory>
-						</fileset>
-						<fileset>
-							<!-- Clean-up gwt cache -->
-							<directory>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/gwt-unitCache</directory>
-						</fileset>
-					</filesets>
-				</configuration>
 			</plugin>
 
 			<plugin>
 		        <artifactId>maven-war-plugin</artifactId>
 		        <version>2.3</version>
 		        <configuration>
-		        	<packagingExcludes>
-						**/VAADIN/gwt-unitCache/**,
-						**/VAADIN/widgetsets/WEB-INF/**,
-						**/WEB-INF/classes/gwt-unitCache/**,
-						**/WEB-INF/classes/themes/**,
-						**/WEB-INF/classes/widgetsets/**
-					</packagingExcludes>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 		        </configuration>
 			</plugin>
@@ -160,16 +141,6 @@
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
 				<version>\${symbol_dollar}{vaadin.plugin.version}</version>
-				<configuration>
-					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
-					<webappDirectory>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets</webappDirectory>
-					<hostedWebapp>\${symbol_dollar}{basedir}/src/main/webapp/VAADIN/widgetsets</hostedWebapp>
-					<noServer>true</noServer>
-					<persistentunitcachedir>\${symbol_dollar}{basedir}/target/tmp/gwt-unitCache</persistentunitcachedir>
-					<compileReport>false</compileReport>
-					<strict>true</strict>
-					<runTarget>http://localhost:8080/</runTarget>
-				</configuration>
 				<executions>
 					<!-- You are free to mark this as permanently ignored in Eclipse -->
 					<execution>
