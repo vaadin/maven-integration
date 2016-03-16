@@ -1,6 +1,6 @@
 package ${package}.demo;
 
-import ${package}.${ComponentClassName};
+import ${package}.${componentClassName};
 
 import javax.servlet.annotation.WebServlet;
 
@@ -14,7 +14,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 @Theme("demo")
-@Title("${ComponentClassName} Add-on Demo")
+@Title("${componentClassName} Add-on Demo")
 @SuppressWarnings("serial")
 public class DemoUI extends UI
 {
@@ -28,7 +28,7 @@ public class DemoUI extends UI
     protected void init(VaadinRequest request) {
 
         // Initialize our new UI component
-        final ${ComponentClassName} component = new ${ComponentClassName}();
+        final ${componentClassName} component = new ${componentClassName}();
 
         // Show it in the middle of the screen
         final VerticalLayout layout = new VerticalLayout();

@@ -1,6 +1,6 @@
 package ${package}.client;
 
-import ${package}.${ComponentClassName};
+import ${package}.${componentClassName};
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -17,17 +17,17 @@ import com.vaadin.shared.ui.Connect;
 // Connector binds client-side widget class to server-side component class
 // Connector lives in the client and the @Connect annotation specifies the
 // corresponding server-side component
-@Connect(${ComponentClassName}.class)
-public class ${ComponentClassName}Connector extends AbstractComponentConnector {
+@Connect(${componentClassName}.class)
+public class ${componentClassName}Connector extends AbstractComponentConnector {
 
     // ServerRpc is used to send events to server. Communication implementation
     // is automatically created here
-    ${ComponentClassName}ServerRpc rpc = RpcProxy.create(${ComponentClassName}ServerRpc.class, this);
+    ${componentClassName}ServerRpc rpc = RpcProxy.create(${componentClassName}ServerRpc.class, this);
 
-    public ${ComponentClassName}Connector() {
+    public ${componentClassName}Connector() {
         
         // To receive RPC events from server, we register ClientRpc implementation 
-        registerRpc(${ComponentClassName}ClientRpc.class, new ${ComponentClassName}ClientRpc() {
+        registerRpc(${componentClassName}ClientRpc.class, new ${componentClassName}ClientRpc() {
             public void alert(String message) {
                 Window.alert(message);
             }
@@ -50,14 +50,14 @@ public class ${ComponentClassName}Connector extends AbstractComponentConnector {
     // We must implement getWidget() to cast to correct type 
     // (this will automatically create the correct widget type)
     @Override
-    public ${ComponentClassName}Widget getWidget() {
-        return (${ComponentClassName}Widget) super.getWidget();
+    public ${componentClassName}Widget getWidget() {
+        return (${componentClassName}Widget) super.getWidget();
     }
 
     // We must implement getState() to cast to correct type
     @Override
-    public ${ComponentClassName}State getState() {
-        return (${ComponentClassName}State) super.getState();
+    public ${componentClassName}State getState() {
+        return (${componentClassName}State) super.getState();
     }
 
     // Whenever the state changes in the server-side, this method is called

@@ -4,7 +4,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 // JUnit tests here
-public class ${ComponentClassName}Test {
+public class ${componentClassName}Test {
 
 	@Test
 	public void thisAlwaysPasses() {

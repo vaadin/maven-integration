@@ -5,7 +5,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<requiredProperties>
-		<requiredProperty key="ComponentClassName">
+		<requiredProperty key="componentClassName">
 			<defaultValue>MyComponent</defaultValue>
 		</requiredProperty>
 	</requiredProperties>

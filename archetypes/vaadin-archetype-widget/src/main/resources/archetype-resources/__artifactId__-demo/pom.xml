@@ -8,7 +8,7 @@
 	<artifactId>\${artifactId}-demo</artifactId>
 	<packaging>war</packaging>
 	<version>\${version}</version>
-	<name>\${ComponentClassName} Add-on Demo</name>
+	<name>\${componentClassName} Add-on Demo</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,19 +22,19 @@
     <!--     
 	<organization>
 		<name>My Name</name>
-		<url>https://github.com/mygithubaccount/\${ComponentClassName}/</url>
+		<url>https://github.com/mygithubaccount/\${componentClassName}/</url>
 	</organization>
     
 	<scm>
-		<url>git://github.com/mygithubaccount/\${ComponentClassName}.git</url>
-		<connection>scm:git:git://github.com/mygithubaccount/\${ComponentClassName}.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:/mygithubaccount/\${ComponentClassName}.git</developerConnection>
-		<tag>\${ComponentClassName} add-on for Vaadin</tag>
+		<url>git://github.com/mygithubaccount/\${componentClassName}.git</url>
+		<connection>scm:git:git://github.com/mygithubaccount/\${componentClassName}.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:/mygithubaccount/\${componentClassName}.git</developerConnection>
+		<tag>\${componentClassName} add-on for Vaadin</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/mygithubaccount/\${ComponentClassName}/issues</url>
+		<url>https://github.com/mygithubaccount/\${componentClassName}/issues</url>
 	</issueManagement>
     -->
 

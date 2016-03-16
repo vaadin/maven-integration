@@ -1,9 +1,9 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-${symbol_pound} ${ComponentClassName} Add-on for Vaadin 7
+${symbol_pound} ${componentClassName} Add-on for Vaadin 7
 
-${ComponentClassName} is an UI component add-on for Vaadin 7.
+${componentClassName} is an UI component add-on for Vaadin 7.
 
 ${symbol_pound}${symbol_pound} Online demo
 
@@ -15,7 +15,7 @@ Official releases of this add-on are available at Vaadin Directory. For Maven in
 
 ${symbol_pound}${symbol_pound} Building and running demo
 
-git clone <url of the ${ComponentClassName} repository>
+git clone <url of the ${componentClassName} repository>
 mvn clean install
 cd demo
 mvn jetty:run
@@ -82,7 +82,7 @@ ${symbol_pound}${symbol_pound} License & Author
 
 Add-on is distributed under Apache License 2.0. For license terms, see LICENSE.txt.
 
-${ComponentClassName} is written by <...>
+${componentClassName} is written by <...>
 
 ${symbol_pound} Developer Guide
 
@@ -110,4 +110,4 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Feature C
 
 ${symbol_pound}${symbol_pound} API
 
-${ComponentClassName} JavaDoc is available online at <...>
+${componentClassName} JavaDoc is available online at <...>
