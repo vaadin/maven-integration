@@ -2,7 +2,7 @@
 
 _To try this out:_
 
-mvn archetype:generate -DarchetypeGroupId=com.vaadin -DarchetypeArtifactId=vaadin-archetype-widget -DarchetypeVersion=7.0-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=com.vaadin -DarchetypeArtifactId=vaadin-archetype-widget -DarchetypeVersion=7.6-SNAPSHOT
 
 
 _To compile the archetype:_
@@ -15,4 +15,4 @@ mvn install
 
 cd ..
 
-mvn archetype:generate -DarchetypeGroupId=com.vaadin -DarchetypeArtifactId=vaadin-archetype-widget -DarchetypeVersion=7.0-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=com.vaadin -DarchetypeArtifactId=vaadin-archetype-widget -DarchetypeVersion=7.6-SNAPSHOT
