@@ -3,6 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.backend;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.Set;
  * @param <T>
  *            bean type
  */
-public class CrudService<T> {
+public class CrudService<T> implements Serializable {
 
     private Set<T> storage = new LinkedHashSet<T>();
 
