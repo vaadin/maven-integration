@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Simple interface for authentication and authorization checks.
  */
-public interface AccessControl implements Serializable {
+public interface AccessControl extends Serializable {
 
     public boolean signIn(String username, String password);
 
