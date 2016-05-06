@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-      <groupId>com.vaadin</groupId>
-      <artifactId>vaadin-parent</artifactId>
-      <version>1.0.0</version>
+        <groupId>com.vaadin</groupId>
+        <artifactId>vaadin-parent</artifactId>
+        <version>1.0.0</version>
     </parent>
 
     <groupId>com.vaadin</groupId>
@@ -17,16 +17,16 @@
     <name>vaadin-archetype-java-ee-application</name>
     <url>http://vaadin.com</url>
     <description>
-        This archetype generates a sample Java EE Vaadin application as a  Maven project.
+        This archetype generates a sample Java EE Vaadin application as a Maven project.
     </description>
     <scm>
-      <url>https://github.com/vaadin/maven-integration</url>
-      <connection>https://github.com/vaadin/maven-integration.git</connection>
-      <developerConnection>ssh://user@dev.vaadin.com:29418/maven-integration</developerConnection>
+        <url>https://github.com/vaadin/maven-integration</url>
+        <connection>https://github.com/vaadin/maven-integration.git</connection>
+        <developerConnection>ssh://user@dev.vaadin.com:29418/maven-integration</developerConnection>
     </scm>
 
     <properties>
-      <vaadin.prerelease>false</vaadin.prerelease>
+        <vaadin.prerelease>false</vaadin.prerelease>
     </properties>
 
     <build>

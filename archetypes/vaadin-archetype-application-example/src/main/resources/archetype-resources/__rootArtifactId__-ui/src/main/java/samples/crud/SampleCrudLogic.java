@@ -7,6 +7,7 @@ import ${package}.${uiName};
 import ${package}.samples.backend.DataService;
 import ${package}.samples.backend.data.Product;
 
+import java.io.Serializable;
 import com.vaadin.server.Page;
 
 /**
@@ -18,7 +19,7 @@ import com.vaadin.server.Page;
  * the system separately, and to e.g. provide alternative views for the same
  * data.
  */
-public class SampleCrudLogic {
+public class SampleCrudLogic implements Serializable {
 
     private SampleCrudView view;
 

@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.config;
+package ${package}.backend.config;
 
 import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.Produces;
@@ -11,6 +11,7 @@ import javax.persistence.PersistenceContext;
 /**
  * CDI configuration class.
  */
+@Dependent
 public class CdiConfig {
 
     /**

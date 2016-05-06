@@ -113,5 +113,40 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>production</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>${symbol_dollar}{basedir}/src/main/resources</directory>
+                        <excludes>
+                            <exclude>VAADIN/widgetsets/**</exclude>
+                        </excludes>
+                    </resource>
+                </resources>
+                <plugins>
+                    <!-- Recompile the widgetset -->
+                    <plugin>
+                        <groupId>com.vaadin</groupId>
+                        <artifactId>vaadin-maven-plugin</artifactId>
+                        <configuration>
+                            <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+                            <webappDirectory>${symbol_dollar}{project.build.directory}/classes/VAADIN/widgetsets</webappDirectory>
+                            <draftCompile>false</draftCompile>
+                            <compileReport>false</compileReport>
+                            <style>OBF</style>
+                            <strict>true</strict>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>compile</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>

@@ -3,11 +3,15 @@
 #set( $symbol_escape = '\' )
 package ${package}.ui;
 
+import ${package}.backend.command.common.CommandHandler;
+import ${package}.backend.command.CreateCustomer;
+import ${package}.backend.entity.Customer;
+import ${package}.backend.services.api.CustomerService;
+
 import com.vaadin.annotations.Push;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.cdi.CDIUI;
-import ${package}.boundary.SampleBoundary;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Notification;
@@ -29,15 +33,22 @@ public class ${uiName} extends UI {
     ${uiName}Messages messages;
 
     @Inject
-    SampleBoundary boundary;
+    CustomerService customerService;
+
+    @Inject
+    CommandHandler commandHandler;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        setContent(new Button(messages.uiContentButtonLabel(), this::invokeBoundary));
+        setContent(new Button(messages.uiContentButtonLabel(), this::createCustomer));
         LOGGER.info("UI {} initialized", this);
     }
 
-    private void invokeBoundary(Button.ClickEvent event) {
-        Notification.show(boundary.createAndReturn("Foobar!").toString());
+    private void createCustomer(Button.ClickEvent event) {
+        // This code demonstrates how to invoke a service based and a command based backend, respectively.
+        // In a real world application, you probably want to pick one approach only and stick to it.
+        Customer byService = customerService.createAndReturn("Created By Service");
+        Customer byCommand = commandHandler.handle(new CreateCustomer("Created By Command"));
+        Notification.show(String.format("%s %s", byService, byCommand));
     }
 }

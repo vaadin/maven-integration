@@ -14,6 +14,9 @@
         <requiredProperty key="themeName">
             <defaultValue>mytheme</defaultValue>
         </requiredProperty>
+        <requiredProperty key="targetAppServer">
+            <defaultValue>wildfly</defaultValue> <!-- Supported values: wildfly, glassfish -->
+        </requiredProperty>
     </requiredProperties>
     <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
@@ -24,6 +27,28 @@
         </fileSet>
     </fileSets>
     <modules>
+        <module id="${rootArtifactId}-backend" dir="__rootArtifactId__-backend" name="${rootArtifactId}-backend">
+            <fileSets>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>META-INF/**/*.xml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources-production</directory>
+                    <includes>
+                        <include>META-INF/**/*.xml</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
         <module id="${rootArtifactId}-ui" dir="__rootArtifactId__-ui" name="${rootArtifactId}-ui">
             <fileSets>
                 <fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -56,26 +81,23 @@
                         <include>**/*.scss</include>
                     </includes>
                 </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/webapp-production</directory>
+                    <includes>
+                        <include>**/*.xml</include>
+                        <include>**/*.scss</include>
+                    </includes>
+                </fileSet>
                 <fileSet encoding="UTF-8">
                     <directory>src/main/webapp</directory>
                     <includes>
                         <include>**/*.ico</include>
                     </includes>
                 </fileSet>
-            </fileSets>
-        </module>
-        <module id="${rootArtifactId}-production" dir="__rootArtifactId__-production" name="${rootArtifactId}-production">
-            <fileSets>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/main/resources</directory>
+                <fileSet encoding="UTF-8">
+                    <directory>src/main/webapp-production</directory>
                     <includes>
-                        <include>**/*.xml</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/main/webapp</directory>
-                    <includes>
-                        <include>**/*.xml</include>
+                        <include>**/*.ico</include>
                     </includes>
                 </fileSet>
             </fileSets>
