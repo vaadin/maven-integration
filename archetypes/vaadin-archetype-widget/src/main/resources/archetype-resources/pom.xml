@@ -10,6 +10,10 @@
 	<version>\${version}</version>
 	<name>\${componentClassName} Add-on Root Project</name>
 
+	<prerequisites>
+		<maven>3</maven>
+	</prerequisites>
+
 	<modules>
 		<module>\${artifactId}-addon</module>
 		<module>\${artifactId}-demo</module>
