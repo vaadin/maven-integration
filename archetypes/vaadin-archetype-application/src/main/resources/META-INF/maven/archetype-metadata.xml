@@ -35,5 +35,9 @@
         <include>**/*.ico</include>
       </includes>
     </fileSet>
+    <!-- Make sure there is an empty resource directory for the Designer -->
+    <fileSet encoding="UTF-8">
+      <directory>src/main/resources</directory>
+    </fileSet>
   </fileSets>
 </archetype-descriptor>
