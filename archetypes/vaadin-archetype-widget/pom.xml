@@ -56,9 +56,11 @@
       <url>https://www.apache.org/licenses/LICENSE-2.0</url>
     </license>
   </licenses>
-  
+
   <properties>
     <vaadin.prerelease>false</vaadin.prerelease>
+    <vaadin.version>${project.version}</vaadin.version>
+    <vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
   </properties>
 
   <repositories>

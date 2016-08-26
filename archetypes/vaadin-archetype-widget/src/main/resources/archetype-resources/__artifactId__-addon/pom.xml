@@ -18,8 +18,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<vaadin.version>${project.version}</vaadin.version>
-		<vaadin.plugin.version>\${vaadin.version}</vaadin.plugin.version>
+		<vaadin.version>${vaadin.version}</vaadin.version>
+		<vaadin.plugin.version>${vaadin.plugin.version}</vaadin.plugin.version>
 
 		<!-- ZIP Manifest fields -->
 		<Implementation-Version>\${symbol_dollar}{project.version}</Implementation-Version>
@@ -30,12 +30,12 @@
 		<Vaadin-Addon>\${symbol_dollar}{project.artifactId}-\${symbol_dollar}{project.version}.jar</Vaadin-Addon>
 	</properties>
 
-    <!--     
+    <!--
 	<organization>
 		<name>My Name</name>
 		<url>https://github.com/mygithubaccount/\${componentClassName}/</url>
 	</organization>
-    
+
 	<scm>
 		<url>git://github.com/mygithubaccount/\${componentClassName}.git</url>
 		<connection>scm:git:git://github.com/mygithubaccount/\${componentClassName}.git</connection>
@@ -76,7 +76,7 @@
 			<version>\${symbol_dollar}{vaadin.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- This can be replaced with TestNG or some other test framework supported by the surefire plugin -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -108,7 +108,7 @@
 					</archive>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -164,7 +164,7 @@
 			</plugin>
 		</plugins>
 
-		<!-- This is needed for the sources required by the client-side compiler to be 
+		<!-- This is needed for the sources required by the client-side compiler to be
 			included in the produced JARs -->
 		<resources>
 			<resource>
@@ -177,7 +177,7 @@
 				<directory>src/main/resources</directory>
 			</resource>
 		</resources>
-		
+
 	</build>
 
 	<profiles>
@@ -187,7 +187,7 @@
 			<activation>
 				<activeByDefault>${vaadin.prerelease}</activeByDefault>
 			</activation>
-			
+
 			<repositories>
 				<repository>
 					<id>vaadin-prereleases</id>

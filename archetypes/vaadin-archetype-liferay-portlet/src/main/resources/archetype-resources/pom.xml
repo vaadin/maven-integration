@@ -13,8 +13,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<vaadin.version>${project.version}</vaadin.version>
-		<vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
+		<vaadin.version>${vaadin.version}</vaadin.version>
+		<vaadin.plugin.version>${vaadin.plugin.version}</vaadin.plugin.version>
         <liferay.version>${liferayVersion}</liferay.version>
 	</properties>
 	<repositories>
@@ -86,14 +86,14 @@
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>portal-service</artifactId>
@@ -223,7 +223,7 @@
 			<activation>
 				<activeByDefault>${vaadin.prerelease}</activeByDefault>
 			</activation>
-			
+
 			<repositories>
 				<repository>
 					<id>vaadin-prereleases</id>

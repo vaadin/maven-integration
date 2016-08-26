@@ -9,14 +9,14 @@
 	<packaging>pom</packaging>
 	<version>\${version}</version>
 	<name>\${rootArtifactId}-parent</name>
-	
+
 	<prerequisites>
 		<maven>3.0</maven>
 	</prerequisites>
 
 	<properties>
-		<vaadin.version>${project.version}</vaadin.version>
-		<vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
+		<vaadin.version>${vaadin.version}</vaadin.version>
+		<vaadin.plugin.version>${vaadin.plugin.version}</vaadin.plugin.version>
 		<jetty.plugin.version>9.3.9.v20160517</jetty.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>

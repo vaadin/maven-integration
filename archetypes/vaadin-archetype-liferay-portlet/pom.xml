@@ -61,6 +61,8 @@
 
     <properties>
         <vaadin.prerelease>false</vaadin.prerelease>
+        <vaadin.version>${project.version}</vaadin.version>
+        <vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
     </properties>
 
     <build>

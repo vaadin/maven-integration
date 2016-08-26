@@ -9,14 +9,14 @@
 	<packaging>war</packaging>
 	<version>\${version}</version>
 	<name>\${rootArtifactId}</name>
-	
+
 	<prerequisites>
 		<maven>3</maven>
 	</prerequisites>
 
 	<properties>
-		<vaadin.version>${project.version}</vaadin.version>
-		<vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
+		<vaadin.version>${vaadin.version}</vaadin.version>
+		<vaadin.plugin.version>${vaadin.plugin.version}</vaadin.plugin.version>
 		<jetty.plugin.version>9.3.9.v20160517</jetty.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -115,7 +115,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- The Jetty plugin allows us to easily test the development build by 
+			<!-- The Jetty plugin allows us to easily test the development build by
 				running jetty:run on the command line. -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>

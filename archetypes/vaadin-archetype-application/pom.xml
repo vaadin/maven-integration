@@ -23,9 +23,11 @@
     <connection>https://github.com/vaadin/maven-integration.git</connection>
     <developerConnection>ssh://user@dev.vaadin.com:29418/maven-integration</developerConnection>
   </scm>
-  
+
   <properties>
     <vaadin.prerelease>false</vaadin.prerelease>
+    <vaadin.version>${project.version}</vaadin.version>
+    <vaadin.plugin.version>\${symbol_dollar}{vaadin.version}</vaadin.plugin.version>
   </properties>
 
   <build>
