@@ -58,6 +58,9 @@
             <include>**/*.ico</include>
           </includes>
         </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/resources</directory>
+        </fileSet>
       </fileSets>
     </module>
     <module id="${rootArtifactId}-backend" dir="__rootArtifactId__-backend" name="${rootArtifactId}-backend">

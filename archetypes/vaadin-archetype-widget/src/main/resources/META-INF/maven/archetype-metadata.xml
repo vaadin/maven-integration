@@ -68,6 +68,10 @@
 			</includes>
 		</fileSet>
 
+    <fileSet filtered="false" packaged="true" encoding="UTF-8">
+			<directory>__artifactId__-demo/src/main/resources</directory>
+		</fileSet>
+
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
 			<directory>__artifactId__-demo/src/test/java</directory>
 			<includes>
