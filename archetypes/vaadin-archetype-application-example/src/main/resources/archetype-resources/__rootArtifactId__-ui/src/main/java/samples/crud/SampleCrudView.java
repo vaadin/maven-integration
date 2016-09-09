@@ -9,7 +9,7 @@ import ${package}.samples.ResetButtonForTextField;
 import ${package}.samples.backend.DataService;
 import ${package}.samples.backend.data.Product;
 
-import com.vaadin.event.FieldEvents;
+import com.vaadin.v7.event.FieldEvents;
 import com.vaadin.event.SelectionEvent;
 import com.vaadin.event.SelectionEvent.SelectionListener;
 import com.vaadin.navigator.View;
@@ -20,7 +20,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CssLayout;
-import com.vaadin.ui.Grid.SelectionModel;
+import com.vaadin.v7.ui.Grid.SelectionModel;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;

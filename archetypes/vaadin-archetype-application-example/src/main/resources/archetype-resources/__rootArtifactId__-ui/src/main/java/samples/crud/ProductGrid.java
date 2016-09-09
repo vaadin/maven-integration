@@ -9,17 +9,17 @@ import java.util.Locale;
 import ${package}.samples.backend.data.Availability;
 import ${package}.samples.backend.data.Product;
 
-import com.vaadin.data.util.BeanItem;
-import com.vaadin.data.util.BeanItemContainer;
-import com.vaadin.data.util.MethodProperty;
-import com.vaadin.data.util.converter.Converter;
-import com.vaadin.data.util.converter.StringToEnumConverter;
-import com.vaadin.data.util.converter.StringToIntegerConverter;
-import com.vaadin.data.util.filter.Or;
-import com.vaadin.data.util.filter.SimpleStringFilter;
+import com.vaadin.v7.data.util.BeanItem;
+import com.vaadin.v7.data.util.BeanItemContainer;
+import com.vaadin.v7.data.util.MethodProperty;
+import com.vaadin.v7.data.util.converter.Converter;
+import com.vaadin.v7.data.util.converter.StringToEnumConverter;
+import com.vaadin.v7.data.util.converter.StringToIntegerConverter;
+import com.vaadin.v7.data.util.filter.Or;
+import com.vaadin.v7.data.util.filter.SimpleStringFilter;
 import com.vaadin.server.FontAwesome;
-import com.vaadin.ui.Grid;
-import com.vaadin.ui.renderers.HtmlRenderer;
+import com.vaadin.v7.ui.Grid;
+import com.vaadin.v7.ui.renderers.HtmlRenderer;
 
 /**
  * Grid of products, handling the visual presentation and filtering of a set of

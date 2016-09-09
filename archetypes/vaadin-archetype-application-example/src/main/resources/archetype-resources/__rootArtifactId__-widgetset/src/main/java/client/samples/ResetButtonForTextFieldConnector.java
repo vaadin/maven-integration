@@ -15,6 +15,7 @@ import com.vaadin.client.ServerConnector;
 import com.vaadin.client.communication.StateChangeEvent;
 import com.vaadin.client.extensions.AbstractExtensionConnector;
 import com.vaadin.client.ui.VTextField;
+import com.vaadin.client.ui.textfield.AbstractTextFieldConnector;
 import com.vaadin.shared.ui.Connect;
 import ${package}.samples.ResetButtonForTextField;
 
@@ -29,6 +30,7 @@ public class ResetButtonForTextFieldConnector extends
         AbstractExtensionConnector implements KeyUpHandler, AttachEvent.Handler {
 
     public static final String CLASSNAME = "resetbuttonfortextfield";
+    private AbstractTextFieldConnector textFieldConnector;
     private VTextField textField;
     private Element resetButtonElement;
 
@@ -48,8 +50,8 @@ public class ResetButtonForTextFieldConnector extends
                     }
                 });
 
-        textField = (VTextField) ((ComponentConnector) serverConnector)
-                .getWidget();
+        textFieldConnector = (AbstractTextFieldConnector) serverConnector;
+        textField = (VTextField) textFieldConnector.getWidget();
         textField.addStyleName(CLASSNAME + "-textfield");
 
         resetButtonElement = DOM.createDiv();
@@ -104,7 +106,7 @@ public class ResetButtonForTextFieldConnector extends
 
     private void clearTextField() {
         textField.setValue("");
-        textField.valueChange(true);
+        textFieldConnector.flush();
         updateResetButtonVisibility();
         textField.getElement().focus();
     }

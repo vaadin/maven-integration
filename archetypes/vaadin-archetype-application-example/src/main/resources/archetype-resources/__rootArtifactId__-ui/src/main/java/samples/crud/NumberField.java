@@ -9,8 +9,8 @@ import java.util.Locale;
 
 import ${package}.samples.AttributeExtension;
 
-import com.vaadin.data.util.converter.StringToIntegerConverter;
-import com.vaadin.ui.TextField;
+import com.vaadin.v7.data.util.converter.StringToIntegerConverter;
+import com.vaadin.v7.ui.TextField;
 
 /**
  * A field for entering numbers. On touch devices, a numeric keyboard is shown

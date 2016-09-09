@@ -22,7 +22,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-server</artifactId>
+			<artifactId>vaadin-compatibility-server</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
@@ -35,7 +35,7 @@
 		<!-- vaadin-client-compiled is needed if the pom contains no add-ons -->
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiled</artifactId>
+			<artifactId>vaadin-compatibility-client-compiled</artifactId>
 		</dependency>
 
 		<!-- Add-on from this project, uncomment to enable client-side modifications -->
