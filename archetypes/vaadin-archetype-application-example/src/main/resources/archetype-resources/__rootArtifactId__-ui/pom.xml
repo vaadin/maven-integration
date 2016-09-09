@@ -22,7 +22,7 @@
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-server</artifactId>
+            <artifactId>vaadin-compatibility-server</artifactId>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>

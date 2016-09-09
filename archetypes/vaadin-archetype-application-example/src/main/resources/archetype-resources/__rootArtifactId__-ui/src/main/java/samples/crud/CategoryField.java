@@ -11,10 +11,10 @@ import java.util.Set;
 
 import ${package}.samples.backend.data.Category;
 
-import com.vaadin.data.util.converter.Converter.ConversionException;
-import com.vaadin.ui.CheckBox;
+import com.vaadin.v7.data.util.converter.Converter.ConversionException;
+import com.vaadin.v7.ui.CheckBox;
 import com.vaadin.ui.Component;
-import com.vaadin.ui.CustomField;
+import com.vaadin.v7.ui.CustomField;
 import com.vaadin.ui.VerticalLayout;
 
 /**
@@ -58,7 +58,7 @@ public class CategoryField extends CustomField<Set<Category>> {
 
                 @Override
                 public void valueChange(
-                        com.vaadin.data.Property.ValueChangeEvent event) {
+                        com.vaadin.v7.data.Property.ValueChangeEvent event) {
                     if (!updatingField) {
                         Set<Category> oldCategories = getValue();
                         Set<Category> categories;
