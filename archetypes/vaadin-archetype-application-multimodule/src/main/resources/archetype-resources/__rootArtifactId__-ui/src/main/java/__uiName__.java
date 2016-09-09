@@ -8,11 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import ${package}.backend.CrudService;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.data.util.BeanItemContainer;
+import com.vaadin.annotations.Widgetset;
+import com.vaadin.v7.data.util.BeanItemContainer;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Grid;
+import com.vaadin.v7.ui.Grid;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -21,6 +22,7 @@ import com.vaadin.ui.VerticalLayout;
  *
  */
 @Theme("${themeName}")
+@Widgetset("com.vaadin.v7.Vaadin7WidgetSet")
 public class ${uiName} extends UI {
 
     private CrudService<Person> service = new CrudService<>();

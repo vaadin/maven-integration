@@ -9,7 +9,7 @@ import ${package}.samples.ResetButtonForTextField;
 import ${package}.samples.backend.DataService;
 import ${package}.samples.backend.data.Product;
 
-import com.vaadin.event.FieldEvents;
+import com.vaadin.v7.event.FieldEvents;
 import com.vaadin.event.SelectionEvent;
 import com.vaadin.event.SelectionEvent.SelectionListener;
 import com.vaadin.navigator.View;
@@ -20,7 +20,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CssLayout;
-import com.vaadin.ui.Grid.SelectionModel;
+import com.vaadin.v7.ui.Grid.SelectionModel;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
@@ -78,14 +78,11 @@ public class SampleCrudView extends CssLayout implements View {
     public HorizontalLayout createTopBar() {
         TextField filter = new TextField();
         filter.setStyleName("filter-textfield");
-        filter.setInputPrompt("Filter");
+        filter.setPlaceholder("Filter");
         ResetButtonForTextField.extend(filter);
         filter.setImmediate(true);
-        filter.addTextChangeListener(new FieldEvents.TextChangeListener() {
-            @Override
-            public void textChange(FieldEvents.TextChangeEvent event) {
-                grid.setFilter(event.getText());
-            }
+        filter.addValueChangeListener(event -> {
+                grid.setFilter(filter.getValue());
         });
 
         newProduct = new Button("New product");

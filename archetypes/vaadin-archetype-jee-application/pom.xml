@@ -11,7 +11,7 @@
 
     <groupId>com.vaadin</groupId>
     <artifactId>vaadin-archetype-java-ee-application</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>8.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>vaadin-archetype-java-ee-application</name>

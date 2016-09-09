@@ -5,7 +5,7 @@ package ${package}.samples;
 
 import com.vaadin.annotations.JavaScript;
 import com.vaadin.server.AbstractJavaScriptExtension;
-import com.vaadin.ui.TextField;
+import com.vaadin.v7.ui.TextField;
 
 /**
  * A JavaScript extension for adding arbitrary HTML attributes for components.
