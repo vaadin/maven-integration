@@ -7,19 +7,16 @@
   <artifactId>vaadin-parent</artifactId>
   <packaging>pom</packaging>
   <name>Vaadin parent POM</name>
-  <version>1.1.0</version>
+  <version>2.0.0</version>
   <url>http://vaadin.com</url>
   <description>
       A parent POM for all artifacts by Vaadin Ltd.
   </description>
   <developers>
     <developer>
-      <id>hesara</id>
-      <name>Henri Sara</name>
-      <email>hesara@vaadin.com</email>
+      <id>vaadin</id>
       <organization>Vaadin</organization>
       <organizationUrl>http://vaadin.com</organizationUrl>
-      <timezone>+2</timezone>
     </developer>
   </developers>
   <scm>
