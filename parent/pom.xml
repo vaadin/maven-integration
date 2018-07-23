@@ -221,7 +221,7 @@
                                 <groupId>${project.groupId}</groupId>
                                 <artifactId>${project.artifactId}</artifactId>
                                 <!--  Needs to be passed as a property via command line e.g. -->
-                                <version>${vaadin.api.reference.version}</version>
+                                <version>${api.reference.version}</version>
                                 <type>jar</type>
                             </dependency>
                         </oldVersion>
