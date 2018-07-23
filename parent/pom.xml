@@ -209,17 +209,12 @@
     </profile>
     <profile>
         <id>apicmp</id>
-        <repositories>
-            <repository>
-                <id>vaadin-prereleases</id>
-                <url>http://maven.vaadin.com/vaadin-prereleases</url>
-            </repository>
-        </repositories>
         <build>
             <plugins>
                 <plugin>
                     <groupId>com.github.siom79.japicmp</groupId>
                     <artifactId>japicmp-maven-plugin</artifactId>
+                    <version>0.12.0</version>
                     <configuration>
                         <oldVersion>
                             <dependency>
