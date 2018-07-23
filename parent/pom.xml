@@ -207,6 +207,55 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+        <id>apicmp</id>
+        <repositories>
+            <repository>
+                <id>vaadin-prereleases</id>
+                <url>http://maven.vaadin.com/vaadin-prereleases</url>
+            </repository>
+        </repositories>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>com.github.siom79.japicmp</groupId>
+                    <artifactId>japicmp-maven-plugin</artifactId>
+                    <configuration>
+                        <oldVersion>
+                            <dependency>
+                                <groupId>${project.groupId}</groupId>
+                                <artifactId>${project.artifactId}</artifactId>
+                                <!--  Needs to be passed as a property via command line e.g. -->
+                                <version>${vaadin.api.reference.version}</version>
+                                <type>jar</type>
+                            </dependency>
+                        </oldVersion>
+                        <newVersion>
+                            <file>
+                                <path>${project.build.directory}/${project.artifactId}-${project.version}.${project.packaging}</path>
+                            </file>
+                        </newVersion>
+                        <parameter>
+                            <ignoreMissingClasses>true</ignoreMissingClasses>
+                            <onlyModified>true</onlyModified>
+                            <skipDiffReport>true</skipDiffReport>
+                            <skipXmlReport>true</skipXmlReport>
+                            <ignoreMissingOldVersion>true</ignoreMissingOldVersion>
+                            <ignoreMissingNewVersion>true</ignoreMissingNewVersion>
+                        </parameter>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>cmp</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
   </profiles>
 
   <build>
