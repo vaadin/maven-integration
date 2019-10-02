@@ -99,7 +99,6 @@
                                           <pluginManagement>keep</pluginManagement>
                                           <dependencyManagement>keep</dependencyManagement>
                                           <build>keep</build>
-                                          <modules>keep</modules>
                                       </pomElements>
                                   </configuration>
                               </execution>
