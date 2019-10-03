@@ -50,6 +50,9 @@
   <profiles>
       <profile>
           <id>flatten-pom</id>
+          <!-- This profile is aming to flatten the pom of vaadin products. -->
+          <!-- It should be used for product releases. --> 
+          <!-- Current target would be using it for stable releases. -->
           <build>
               <pluginManagement>
                   <plugins>
