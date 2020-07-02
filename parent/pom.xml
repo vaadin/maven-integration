@@ -199,6 +199,7 @@
              <configuration>
                <nexusUrl>${staging.server.url}</nexusUrl>
                <serverId>${staging.server.id}</serverId>
+               <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>               
              </configuration>
            </plugin>
         </plugins>
