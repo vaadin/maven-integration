@@ -7,7 +7,7 @@
   <artifactId>vaadin-parent</artifactId>
   <packaging>pom</packaging>
   <name>Vaadin parent POM</name>
-  <version>2.0.2</version>
+  <version>2.0.3</version>
   <url>http://vaadin.com</url>
   <description>
       A parent POM for all artifacts by Vaadin Ltd.
@@ -46,12 +46,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
+
   <profiles>
       <profile>
           <id>flatten-pom</id>
           <!-- This profile is aming to flatten the pom of vaadin products. -->
-          <!-- It should be used for product releases. --> 
+          <!-- It should be used for product releases. -->
           <!-- Current target would be using it for stable releases. -->
           <build>
               <pluginManagement>
@@ -130,6 +130,7 @@
       <properties>
         <staging.server.id>vaadin-staging</staging.server.id>
         <staging.server.url>https://oss.sonatype.org/</staging.server.url>
+        <staging.timeout.minutes>5</staging.timeout.minutes>
       </properties>
       <build>
         <plugins>
@@ -199,7 +200,7 @@
              <configuration>
                <nexusUrl>${staging.server.url}</nexusUrl>
                <serverId>${staging.server.id}</serverId>
-               <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>               
+               <stagingProgressTimeoutMinutes>${staging.timeout.minutes}</stagingProgressTimeoutMinutes>
              </configuration>
            </plugin>
         </plugins>
