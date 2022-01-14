@@ -35,7 +35,7 @@
     <repository>
       <id>vaadin-staging</id>
       <name>Vaadin release staging repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
     <snapshotRepository>
       <id>vaadin-snapshots</id>
