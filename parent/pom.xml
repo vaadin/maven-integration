@@ -7,7 +7,7 @@
   <artifactId>vaadin-parent</artifactId>
   <packaging>pom</packaging>
   <name>Vaadin parent POM</name>
-  <version>2.0.4</version>
+  <version>2.0.5</version>
   <url>http://vaadin.com</url>
   <description>
       A parent POM for all artifacts by Vaadin Ltd.
@@ -97,7 +97,7 @@
                                           <parent>expand</parent>
                                           <name>keep</name>
                                           <description>keep</description>
-                                          <url>expand</url>
+                                          <url>keep</url>
                                           <properties>keep</properties>
                                           <pluginManagement>keep</pluginManagement>
                                           <dependencyManagement>keep</dependencyManagement>
