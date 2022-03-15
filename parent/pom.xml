@@ -97,7 +97,7 @@
                                           <parent>expand</parent>
                                           <name>keep</name>
                                           <description>keep</description>
-                                          <url>expand</url>
+                                          <url>keep</url>
                                           <properties>keep</properties>
                                           <pluginManagement>keep</pluginManagement>
                                           <dependencyManagement>keep</dependencyManagement>
