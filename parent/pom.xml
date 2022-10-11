@@ -50,6 +50,9 @@
   <profiles>
       <profile>
           <id>flatten-pom</id>
+          <properties>
+              <flatten.maven.plugin.version>1.1.0</flatten.maven.plugin.version>
+          </properties>
           <!-- This profile is aming to flatten the pom of vaadin products. -->
           <!-- It should be used for product releases. -->
           <!-- Current target would be using it for stable releases. -->
@@ -81,7 +84,7 @@
                       <plugin>
                           <groupId>org.codehaus.mojo</groupId>
                           <artifactId>flatten-maven-plugin</artifactId>
-                          <version>1.1.0</version>
+                          <version>${flatten.maven.plugin.version}</version>
                           <inherited>true</inherited>
                           <executions>
                               <execution>
@@ -128,6 +131,9 @@
     <profile>
       <id>release</id>
       <properties>
+        <maven.enforcer.plugin.version>3.0.0</maven.enforcer.plugin.version>
+        <maven.gpg.plugin.version>3.0.1</maven.gpg.plugin.version>
+        <nexus.staging.maven.plugin.version>1.6.13</nexus.staging.maven.plugin.version>
         <staging.server.id>vaadin-staging</staging.server.id>
         <staging.server.url>https://oss.sonatype.org/</staging.server.url>
         <staging.timeout.minutes>5</staging.timeout.minutes>
@@ -159,7 +165,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
             <!--This plugin's version is upgraded to resolve conflicts as flow project is using 3.0.0.-->
-            <version>3.0.0</version>
+            <version>${maven.enforcer.plugin.version}</version>
             <executions>
               <execution>
                 <id>enforce-maven</id>
@@ -183,7 +189,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.0.1</version>
+            <version>${maven.gpg.plugin.version}</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -197,7 +203,7 @@
           <plugin>
              <groupId>org.sonatype.plugins</groupId>
              <artifactId>nexus-staging-maven-plugin</artifactId>
-             <version>1.6.8</version>
+             <version>${nexus.staging.maven.plugin.version}</version>
              <extensions>true</extensions>
              <configuration>
                <nexusUrl>${staging.server.url}</nexusUrl>
@@ -213,6 +219,9 @@
       <id>prerelease</id>
       <properties>
         <staging.server.id>vaadin-prerelease-staging</staging.server.id>
+        <maven.enforcer.plugin.version>3.0.0</maven.enforcer.plugin.version>
+        <maven.gpg.plugin.version>3.0.1</maven.gpg.plugin.version>
+        <nexus.staging.maven.plugin.version>1.6.13</nexus.staging.maven.plugin.version>
         <!-- staging.server.url is set by the build environment profile -->
       </properties>
       <build>
@@ -242,7 +251,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
             <!--This plugin's version is upgraded to resolve conflicts as flow project is using 3.0.0.-->
-            <version>3.0.0</version>
+            <version>${maven.enforcer.plugin.version}</version>
             <executions>
               <execution>
                 <id>enforce-maven</id>
@@ -266,7 +275,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.0.1</version>
+            <version>${maven.gpg.plugin.version}</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -280,7 +289,7 @@
           <plugin>
              <groupId>org.sonatype.plugins</groupId>
              <artifactId>nexus-staging-maven-plugin</artifactId>
-             <version>1.6.8</version>
+             <version>${nexus.staging.maven.plugin.version}</version>
              <extensions>true</extensions>
              <configuration>
                <nexusUrl>${staging.server.url}</nexusUrl>
@@ -292,12 +301,15 @@
     </profile>
     <profile>
         <id>apicmp</id>
+        <properties>
+            <japicmp.maven.plugin.version>0.16.0</japicmp.maven.plugin.version>
+        </properties>
         <build>
             <plugins>
                 <plugin>
                     <groupId>com.github.siom79.japicmp</groupId>
                     <artifactId>japicmp-maven-plugin</artifactId>
-                    <version>0.16.0</version>
+                    <version>${japicmp.maven.plugin.version}</version>
                     <configuration>
                         <oldVersion>
                             <dependency>
