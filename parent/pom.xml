@@ -101,6 +101,7 @@
                                           <name>keep</name>
                                           <description>keep</description>
                                           <url>keep</url>
+                                          <scm>keep</scm>
                                           <properties>keep</properties>
                                           <pluginManagement>keep</pluginManagement>
                                           <dependencyManagement>keep</dependencyManagement>
