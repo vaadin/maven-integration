@@ -3,11 +3,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>dev.hilla</groupId>
+  <groupId>com.vaadin</groupId>
   <artifactId>vaadin-parent</artifactId>
   <packaging>pom</packaging>
   <name>Vaadin parent POM</name>
-  <version>0.0.1</version>
+  <version>3.0.0</version>
   <url>http://vaadin.com</url>
   <description>
       A parent POM for all artifacts by Vaadin Ltd.
@@ -129,6 +129,8 @@
         <maven.enforcer.plugin.version>3.0.0</maven.enforcer.plugin.version>
         <maven.gpg.plugin.version>3.0.1</maven.gpg.plugin.version>
         <central.publishing.maven.plugin.version>0.7.0</central.publishing.maven.plugin.version>
+        <central.auto.publish>true</central.auto.publish>
+        <central.waitUntil.status>published</central.waitUntil.status>
       </properties>
       <build>
         <plugins>
@@ -199,8 +201,8 @@
               <extensions>true</extensions>
               <configuration>
                   <publishingServerId>central</publishingServerId>
-                  <!--<autoPublish>true</autoPublish>
-                  <waitUntil>published</waitUntil> -->
+                  <autoPublish>${central.auto.publish}</autoPublish>
+                  <waitUntil>${central.waitUntil.status}</waitUntil>
               </configuration>
           </plugin>
         </plugins>
