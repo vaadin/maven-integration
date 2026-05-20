@@ -7,7 +7,7 @@
   <artifactId>vaadin-parent</artifactId>
   <packaging>pom</packaging>
   <name>Vaadin parent POM</name>
-  <version>3.0.2</version>
+  <version>3.0.3</version>
   <url>http://vaadin.com</url>
   <description>
       A parent POM for all artifacts by Vaadin Ltd.
@@ -199,16 +199,11 @@
               <groupId>org.sonatype.central</groupId>
               <artifactId>central-publishing-maven-plugin</artifactId>
               <version>${central.publishing.maven.plugin.version}</version>
+              <extensions>true</extensions>
               <configuration>
                   <publishingServerId>central</publishingServerId>
                   <autoPublish>${central.auto.publish}</autoPublish>
                   <waitUntil>${central.waitUntil.status}</waitUntil>
-              </configuration>
-          </plugin>
-          <plugin>
-              <artifactId>maven-deploy-plugin</artifactId>
-              <configuration>
-                  <skip>true</skip>
               </configuration>
           </plugin>
         </plugins>
